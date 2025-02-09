@@ -59,7 +59,7 @@ export default function Skills() {
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center px-8 xl:flex-row xl:justify-start">
       <div className="flex flex-col items-center gap-4 text-center xl:items-start xl:gap-8 xl:text-left">
         <h2 className="text-3xl font-black uppercase xl:text-6xl">Skills</h2>
-        <div className="flex flex-col gap-y-2 font-mono">
+        <div className="flex flex-col gap-y-2">
           {skillGroups.map((skillGroup, index) => (
             <div key={index}>
               <h1 className="text-xl xl:text-2xl">{skillGroup.category}</h1>
@@ -67,11 +67,10 @@ export default function Skills() {
                 {skillGroup.skills.map((skill, index) => (
                   <>
                     <span key={`skill_${index}`}>{skill}</span>
-                    {index < skillGroup.skills.length - 2 && (
-                      <span key={`delimiter_${index}`}>, </span>
-                    )}
-                    {index === skillGroup.skills.length - 2 && (
-                      <span key={`delimiter_${index}`}>, and </span>
+                    {index <= skillGroup.skills.length - 2 && (
+                      <span key={`delimiter_${index}`}>
+                        {index === skillGroup.skills.length - 2 ? ", and " : ", "}
+                      </span>
                     )}
                   </>
                 ))}

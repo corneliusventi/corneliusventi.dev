@@ -1,9 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
@@ -20,10 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
+    <html lang="en" className={geistMono.variable}>
+      <body className="font-mono min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
         <header className="absolute inset-x-0 top-0">
-          <div className="container mx-auto flex flex-col justify-between p-8 font-mono xl:flex-row">
+          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
             <Link href="/">
               <h1 className="text-2xl">Cornelius Venti</h1>
             </Link>

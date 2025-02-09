@@ -23,13 +23,13 @@ export default function ContactForm() {
 
   return (
     <form
-      className="flex w-full flex-col gap-8 font-mono xl:max-w-md"
+      className="flex w-full flex-col gap-8 xl:max-w-md"
       onSubmit={handleSubmit}
     >
       <input
         value={name}
         type="text"
-        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-none focus:ring-0"
+        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
         placeholder="Name"
         required
         onChange={(event) => setName(event.target.value)}
@@ -37,14 +37,14 @@ export default function ContactForm() {
       <input
         value={email}
         type="email"
-        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-none focus:ring-0"
+        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
         placeholder="Email"
         required
         onChange={(event) => setEmail(event.target.value)}
       />
       <textarea
         value={message}
-        className="h-20 w-full resize-none border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-none focus:ring-0"
+        className="h-20 w-full resize-none border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
         placeholder="Message"
         required
         onChange={(event) => setMessage(event.target.value)}
