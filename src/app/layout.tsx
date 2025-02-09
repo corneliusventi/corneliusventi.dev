@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
