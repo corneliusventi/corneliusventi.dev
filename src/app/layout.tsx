@@ -30,12 +30,15 @@ export default function RootLayout({
               <h1 className="font-mono text-2xl">Cornelius Venti</h1>
             </Link>
             <nav>
-              <ul className="flex gap-8">
+              <ul className="flex gap-4 xl:gap-8">
+                <li>
+                  <Link href="/projects">Projects</Link>
+                </li>
                 <li>
                   <Link href="/skills">Skills</Link>
                 </li>
                 <li>
-                  <Link href="/projects">Projects</Link>
+                  <Link href="/services">Services</Link>
                 </li>
                 <li>
                   <Link href="/about">About</Link>
