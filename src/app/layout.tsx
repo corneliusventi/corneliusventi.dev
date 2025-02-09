@@ -1,4 +1,5 @@
 import { Rubik, Rubik_Mono_One } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" });
@@ -22,8 +23,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rubik.variable} ${rubik_mono_one.variable}`}>
       <body className="min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
-        <header className="container mx-auto flex flex-row justify-center p-8">
+        <header className="container absolute top-0 mx-auto flex flex-col justify-between p-8 xl:flex-row">
           <h1 className="font-mono text-2xl">Cornelius Venti</h1>
+          <nav>
+            <ul className="flex gap-8">
+              <li>
+                <Link href="/skills">Skills</Link>
+              </li>
+              <li>
+                <Link href="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
         </header>
         {children}
       </body>
