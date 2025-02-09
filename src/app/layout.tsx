@@ -9,9 +9,9 @@ const rubik_mono_one = Rubik_Mono_One({
 });
 
 export const metadata = {
-  title: "Cornelius Venti | Development as a Subscription",
+  title: "Cornelius Venti | Full Stack Developer",
   description:
-    "Are you seeking an experienced full-stack developer to bring your project to life? Look no further! I offer a range of services with customizable features to meet your specific needs, whether you require basic, intermediate, or advanced features.",
+    "Experienced Full Stack Developer: Typescript, NextJS, Tailwind CSS and more",
 };
 
 export default function RootLayout({
