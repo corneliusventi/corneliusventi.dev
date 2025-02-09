@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   twitter: {
     title,
     description,
-    card: "summary",
   },
   openGraph: {
     title,
