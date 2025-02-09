@@ -23,26 +23,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rubik.variable} ${rubik_mono_one.variable}`}>
       <body className="min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
-        <header className="container absolute top-0 mx-auto flex flex-col justify-between p-8 xl:flex-row">
-          <Link href="/">
-            <h1 className="font-mono text-2xl">Cornelius Venti</h1>
-          </Link>
-          <nav>
-            <ul className="flex gap-8">
-              <li>
-                <Link href="/skills">Skills</Link>
-              </li>
-              <li>
-                <Link href="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
+        <header className="absolute inset-x-0 top-0">
+          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
+            <Link href="/">
+              <h1 className="font-mono text-2xl">Cornelius Venti</h1>
+            </Link>
+            <nav>
+              <ul className="flex gap-8">
+                <li>
+                  <Link href="/skills">Skills</Link>
+                </li>
+                <li>
+                  <Link href="/projects">Projects</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </header>
         {children}
       </body>

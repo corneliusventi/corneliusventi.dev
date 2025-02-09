@@ -60,6 +60,7 @@ export default function Skills() {
               )}
             </>
           ))}
+          .
         </p>
       </div>
     </main>
