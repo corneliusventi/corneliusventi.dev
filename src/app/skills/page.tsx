@@ -60,16 +60,22 @@ export default function Skills() {
       <div className="flex flex-col items-center gap-4 text-center xl:items-start xl:gap-8 xl:text-left">
         <h2 className="text-3xl font-black uppercase xl:text-6xl">Skills</h2>
         <div className="flex flex-col gap-y-2 font-mono">
-          {skillGroups.map((skill, index) => (
+          {skillGroups.map((skillGroup, index) => (
             <div key={index}>
-              <h1 className="text-xl xl:text-2xl">{skill.category}</h1>
+              <h1 className="text-xl xl:text-2xl">{skillGroup.category}</h1>
               <p className="text-base xl:text-lg">
-                {skill.skills.map((skill, index) => (
+                {skillGroup.skills.map((skill, index) => (
                   <>
-                    <span key={index}>{skill}</span>
-                    <span key={`delimiter_${index}`}>, </span>
+                    <span key={`skill_${index}`}>{skill}</span>
+                    {index < skillGroup.skills.length - 2 && (
+                      <span key={`delimiter_${index}`}>, </span>
+                    )}
+                    {index === skillGroup.skills.length - 2 && (
+                      <span key={`delimiter_${index}`}>, and </span>
+                    )}
                   </>
                 ))}
+                .
               </p>
             </div>
           ))}
