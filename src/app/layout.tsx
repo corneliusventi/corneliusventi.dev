@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Rubik, Rubik_Mono_One } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
@@ -9,10 +10,23 @@ const rubik_mono_one = Rubik_Mono_One({
   weight: "400",
 });
 
-export const metadata = {
-  title: "Cornelius Venti | Full Stack Developer",
-  description:
-    "Experienced Full Stack Developer: Typescript, NextJS, Tailwind CSS and more",
+const title = "Cornelius Venti | Full Stack Developer";
+const description =
+  "Experienced Full Stack Developer: Typescript, NextJS, Tailwind CSS and more";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  twitter: {
+    title,
+    description,
+    card: "app",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "https://corneliusventi.dev",
+  },
 };
 
 export default function RootLayout({
