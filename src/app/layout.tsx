@@ -28,22 +28,39 @@ export default function RootLayout({
             <nav>
               <ul className="flex gap-4 xl:gap-8">
                 <li>
-                  <Link href="/projects">Projects</Link>
+                  <Link className="hover:underline hover:underline-offset-4" href="/projects">Projects</Link>
                 </li>
                 <li>
-                  <Link href="/skills">Skills</Link>
+                  <Link className="hover:underline hover:underline-offset-4" href="/skills">Skills</Link>
                 </li>
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link className="hover:underline hover:underline-offset-4" href="/about">About</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link className="hover:underline hover:underline-offset-4" href="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
           </div>
         </header>
         {children}
+        <footer className="absolute inset-x-0 bottom-0">
+          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
+            <nav>
+              <ul className="flex gap-4 xl:gap-8">
+                <li>
+                  <Link className="hover:underline hover:underline-offset-4" href="https://github.com/corneliusventi" target="_blank">GitHub</Link>
+                </li>
+                <li>
+                  <Link className="hover:underline hover:underline-offset-4" href="https://linkedin.com/in/corneliusventi" target="_blank">LinkedIn</Link>
+                </li>
+                <li>
+                  <Link className="hover:underline hover:underline-offset-4" href="https://x.com/corneliusventi" target="_blank">X/Twitter</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
       </body>
     </html>
   );
