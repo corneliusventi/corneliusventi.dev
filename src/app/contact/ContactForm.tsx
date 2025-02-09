@@ -29,7 +29,7 @@ export default function ContactForm() {
       <input
         value={name}
         type="text"
-        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
+        className="border-brand-light text-brand-light placeholder:text-brand-light w-full border-b bg-transparent px-2 py-1 text-base placeholder:text-base focus:ring-0 focus:outline-hidden"
         placeholder="Name"
         required
         onChange={(event) => setName(event.target.value)}
@@ -37,21 +37,21 @@ export default function ContactForm() {
       <input
         value={email}
         type="email"
-        className="w-full border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
+        className="border-brand-light text-brand-light placeholder:text-brand-light w-full border-b bg-transparent px-2 py-1 text-base placeholder:text-base focus:ring-0 focus:outline-hidden"
         placeholder="Email"
         required
         onChange={(event) => setEmail(event.target.value)}
       />
       <textarea
         value={message}
-        className="h-20 w-full resize-none border-b border-brand-light bg-transparent px-2 py-1 text-base text-brand-light placeholder:text-base placeholder:text-brand-light focus:outline-hidden focus:ring-0"
+        className="border-brand-light text-brand-light placeholder:text-brand-light h-20 w-full resize-none border-b bg-transparent px-2 py-1 text-base placeholder:text-base focus:ring-0 focus:outline-hidden"
         placeholder="Message"
         required
         onChange={(event) => setMessage(event.target.value)}
       />
       <button
         type="submit"
-        className="self-start rounded-md bg-brand-light px-4 py-1 text-xl font-medium text-brand-dark"
+        className="bg-brand-light text-brand-dark self-start rounded-md px-4 py-1 text-xl font-medium"
       >
         Submit
       </button>

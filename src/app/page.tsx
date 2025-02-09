@@ -16,9 +16,7 @@ export default function Home() {
         <h2 className="text-3xl font-black uppercase xl:text-8xl">
           I&apos;m a Software Enginner
         </h2>
-        <h3 className="text-xl xl:text-2xl">
-          Typescript, Python, and more
-        </h3>
+        <h3 className="text-xl xl:text-2xl">Typescript, Python, and more</h3>
       </div>
     </main>
   );

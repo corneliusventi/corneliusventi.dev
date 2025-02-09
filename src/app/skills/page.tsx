@@ -69,7 +69,9 @@ export default function Skills() {
                     <span key={`skill_${index}`}>{skill}</span>
                     {index <= skillGroup.skills.length - 2 && (
                       <span key={`delimiter_${index}`}>
-                        {index === skillGroup.skills.length - 2 ? ", and " : ", "}
+                        {index === skillGroup.skills.length - 2
+                          ? ", and "
+                          : ", "}
                       </span>
                     )}
                   </>

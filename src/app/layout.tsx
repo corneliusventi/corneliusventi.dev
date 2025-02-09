@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={geistMono.variable}>
-      <body className="font-mono min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
+      <body className="bg-brand-dark text-brand-light min-h-screen w-screen font-mono antialiased">
         <header className="absolute inset-x-0 top-0">
           <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
             <Link href="/">
