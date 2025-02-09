@@ -10,9 +10,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cornelius Venti | Full Stack Developer",
-  description:
-    "Experienced Full Stack Developer: Typescript, NextJS, Tailwind CSS and more",
+  title: "Cornelius Venti | Software Developer",
+  description: "Experienced Software Developer: Typescript, Python and more",
 };
 
 export default function RootLayout({
