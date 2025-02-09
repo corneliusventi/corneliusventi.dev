@@ -13,6 +13,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <>
               <Link
+                className="hover:underline hover:underline-offset-4"
                 key={`project_${index}`}
                 href={project.href}
                 target="_blank"
