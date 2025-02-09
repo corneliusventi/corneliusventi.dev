@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en" className={`${rubik.variable} ${rubik_mono_one.variable}`}>
       <body className="min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
         <header className="container absolute top-0 mx-auto flex flex-col justify-between p-8 xl:flex-row">
-          <h1 className="font-mono text-2xl">Cornelius Venti</h1>
+          <Link href="/">
+            <h1 className="font-mono text-2xl">Cornelius Venti</h1>
+          </Link>
           <nav>
             <ul className="flex gap-8">
               <li>
