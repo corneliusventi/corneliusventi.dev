@@ -37,7 +37,7 @@ export default function RootLayout({
                   <Link className="hover:underline hover:underline-offset-4" href="/about">About</Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="/contact">Contact</Link>
+                  <Link className="hover:underline hover:underline-offset-4" href="mailto:hello@corneliusventi.dev">Contact</Link>
                 </li>
               </ul>
             </nav>
