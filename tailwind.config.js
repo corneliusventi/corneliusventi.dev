@@ -14,8 +14,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-rubik)"],
-        mono: ["var(--font-rubik-mono-one)"],
+        sans: ["var(--font-geist)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },

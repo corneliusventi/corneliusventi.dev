@@ -15,10 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: "https://corneliusventi.dev/services",
-      lastModified: new Date(),
-    },
-    {
       url: "https://corneliusventi.dev/about",
       lastModified: new Date(),
     },

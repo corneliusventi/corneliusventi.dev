@@ -23,7 +23,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="flex w-full flex-col gap-8 xl:max-w-md"
+      className="flex w-full flex-col gap-8 font-mono xl:max-w-md"
       onSubmit={handleSubmit}
     >
       <input

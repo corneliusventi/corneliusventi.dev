@@ -14,10 +14,10 @@ export default function Home() {
       />
       <div className="flex flex-col items-center gap-4 text-center xl:items-start xl:gap-8 xl:text-left">
         <h2 className="text-3xl font-black uppercase xl:text-8xl">
-          I&apos;m a Full Stack Developer
+          I&apos;m a Software Enginner
         </h2>
-        <h3 className="text-xl xl:text-2xl">
-          Typescript, Next.js, Tailwind CSS, and more
+        <h3 className="font-mono text-xl xl:text-2xl">
+          Typescript, Python, and more
         </h3>
       </div>
     </main>

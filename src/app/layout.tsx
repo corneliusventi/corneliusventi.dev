@@ -1,13 +1,12 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Rubik, Rubik_Mono_One } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" });
-const rubik_mono_one = Rubik_Mono_One({
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-rubik-mono-one",
-  weight: "400",
+  variable: "--font-geist-mono",
 });
 
 export const metadata = {
@@ -22,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${rubik.variable} ${rubik_mono_one.variable}`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body className="min-h-screen w-screen bg-brand-dark text-brand-light antialiased">
         <header className="absolute inset-x-0 top-0">
-          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
+          <div className="container mx-auto flex flex-col justify-between p-8 font-mono xl:flex-row">
             <Link href="/">
-              <h1 className="font-mono text-2xl">Cornelius Venti</h1>
+              <h1 className="text-2xl">Cornelius Venti</h1>
             </Link>
             <nav>
               <ul className="flex gap-4 xl:gap-8">
@@ -36,9 +35,6 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link href="/skills">Skills</Link>
-                </li>
-                <li>
-                  <Link href="/services">Services</Link>
                 </li>
                 <li>
                   <Link href="/about">About</Link>
