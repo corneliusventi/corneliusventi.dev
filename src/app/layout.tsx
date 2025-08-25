@@ -149,7 +149,7 @@ export default function RootLayout({
               </ul>
             </nav>
             <div className="mt-4 text-center text-xs opacity-60 sm:text-sm">
-              © 2025 Cornelius Venti. All rights reserved.
+              &copy; 2025 Cornelius Venti. All rights reserved.
             </div>
           </div>
         </footer>
