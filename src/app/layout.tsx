@@ -1,6 +1,7 @@
 import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { MobileNav } from "./components/MobileNav";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -54,8 +55,8 @@ export default function RootLayout({
     <html lang="en" className={geistMono.variable}>
       <body className="bg-brand-dark text-brand-light min-h-screen w-screen font-mono antialiased">
         <header className="absolute inset-x-0 top-0 z-50">
-          <div className="container mx-auto flex flex-col justify-between p-4 sm:p-6 xl:flex-row xl:p-8">
-            <Link href="/" className="mb-4 xl:mb-0">
+          <div className="container mx-auto flex items-center justify-between p-4 sm:p-6 xl:p-8">
+            <Link href="/" className="">
               <div className="relative">
                 <div className="from-brand-accent absolute -inset-1 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
                 <h1 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-xl font-bold sm:text-2xl">
@@ -63,58 +64,7 @@ export default function RootLayout({
                 </h1>
               </div>
             </Link>
-            <nav className="overflow-x-auto">
-              <ul className="flex min-w-max gap-3 whitespace-nowrap sm:gap-4 xl:gap-8">
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="#about"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="#experiences"
-                  >
-                    Experiences
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="#skills"
-                  >
-                    Skills
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="#projects"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="#educations"
-                  >
-                    Educations
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="mailto:hello@corneliusventi.dev"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <MobileNav />
           </div>
         </header>
         {children}
