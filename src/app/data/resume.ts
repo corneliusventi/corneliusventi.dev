@@ -31,12 +31,12 @@ export type PersonalInfo = {
   title: string;
   email: string;
   links: {
+    portfolio: string;
     resume: string;
     profile: string;
     github: string;
     linkedin: string;
     twitter: string;
-    portfolio: string;
   };
 };
 
@@ -51,12 +51,12 @@ export const personalInfo: PersonalInfo = {
   title: "Software Engineer",
   email: "cornelius@corneliusventi.dev",
   links: {
+    portfolio: "https://corneliusventi.dev",
     resume: "https://corneliusventi.dev/resume.pdf",
     profile: "https://corneliusventi.dev/profile.png",
     github: "https://github.com/corneliusventi",
     linkedin: "https://linkedin.com/in/corneliusventi",
     twitter: "https://x.com/corneliusventi",
-    portfolio: "https://corneliusventi.dev",
   },
 };
 
