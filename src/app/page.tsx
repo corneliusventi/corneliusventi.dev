@@ -2,245 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import profile from "./profile.png";
 import React from "react";
+import {
+  personalInfo,
+  aboutInfo,
+  projects,
+  experiences,
+  skillGroups,
+  educations,
+} from "./data/resume";
 
 export default function Home() {
-  const projects = [
-    {
-      name: "Terminal-based Portfolio",
-      description:
-        "A personal portfolio website built as an interactive terminal-style interface. Features modern development tooling with ESLint configuration, lint-staged pre-commit hooks, and comprehensive build pipeline for development and production environments.",
-      href: "https://terminal.corneliusventi.dev/",
-      tech: ["React", "TypeScript", "Next.js", "CSS", "ESLint"],
-    },
-    {
-      name: "SiftlyAPI",
-      description:
-        "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
-      href: "https://siftlyapi.com/",
-      tech: [
-        "Golang",
-        "PostgreSQL",
-        "Redis",
-        "Docker",
-        "MaxMind GeoIP",
-        "WHOIS",
-      ],
-    },
-  ];
-
-  type Experience = {
-    company: string;
-    position: string;
-    period: string;
-    location: string;
-    achievements: string[];
-    technologies?: string[];
-  };
-
-  const experiences: Experience[] = [
-    {
-      company: "Icebaths",
-      position: "Software Engineer",
-      period: "2025 - Present",
-      location: "Indonesia (Remote)",
-      achievements: [
-        "Architected comprehensive lead generation system leveraging Google Maps Places API and Apollo.io integration using Golang",
-        "Engineered automated data collection workflows with AI-assisted development using Cursor",
-        "Designed robust data processing pipelines optimizing lead qualification and management processes",
-        "Integrated Google Sheets API for real-time lead storage and organization",
-        "Modernized Shopify storefront theme with performance optimizations and UX enhancements",
-      ],
-      technologies: [
-        "Golang",
-        "Google Maps API",
-        "Apollo.io",
-        "Google Sheets API",
-        "Shopify",
-        "Cursor",
-        "AI Development",
-      ],
-    },
-    {
-      company: "Nubela",
-      position: "Software Engineer",
-      period: "2023 - 2025",
-      location: "Singapore (Remote)",
-      achievements: [
-        "Spearheaded end-to-end development of enterprise Teams feature with sophisticated user management systems",
-        "Engineered seamless cross-platform integration between Invoice Ninja and Xero, reducing processing time by 80%",
-        "Architected high-performance data processing pipelines for ETL operations across multiple enterprise platforms",
-      ],
-      technologies: [
-        "Python",
-        "Flask",
-        "React",
-        "Docker",
-        "Kubernetes",
-        "Stripe",
-        "Invoice Ninja",
-        "Xero API",
-      ],
-    },
-    {
-      company: "FWD Insurance",
-      position: "Full Stack Developer",
-      period: "2020 - 2022",
-      location: "Singapore (Remote)",
-      achievements: [
-        "Developed high-conversion Lead Generation Form using Vue.js and Nest.js, delivered in 3 months",
-        "Engineered comprehensive Logger Module for microservices, reducing debugging time by 60%",
-        "Built enterprise-grade Email/Report Microservice processing thousands of automated reports monthly",
-        "Architected Back Office Promotion Management system with Nest.js, Next.js, and Material UI",
-      ],
-      technologies: [
-        "Vue.js",
-        "Nest.js",
-        "Next.js",
-        "Material UI",
-        "AWS CloudWatch",
-        "Microservices",
-        "Email Systems",
-      ],
-    },
-    {
-      company: "Satumarket",
-      position: "Staff Development",
-      period: "2020 - 2020",
-      location: "Indonesia",
-      achievements: [
-        "Architected comprehensive local e-commerce platform using Nuxt.js, Vuetify, Vuex, and Laravel in 3 months",
-        "Engineered sophisticated Back Office System streamlining business management workflows",
-      ],
-      technologies: [
-        "Nuxt.js",
-        "Vuetify",
-        "Vuex",
-        "Laravel",
-        "E-commerce",
-        "Back Office Systems",
-      ],
-    },
-    {
-      company: "Orange Multimedia",
-      position: "Web Developer",
-      period: "2018 - 2020",
-      location: "Indonesia",
-      achievements: [
-        "Developed Electronic Signature-based Letter System reducing processing time by 70%",
-        "Engineered Online Tax Reporting System streamlining government compliance processes",
-        "Architected Regional Financial Management Information System managing complex financial operations",
-        "Delivered health data management system with 81 complex resource tables",
-      ],
-      technologies: [
-        "Electronic Signatures",
-        "Tax Systems",
-        "Financial Management",
-        "Health Data",
-        "Government Systems",
-      ],
-    },
-  ];
-
-  type SkillGroup = {
-    category: string;
-    skills: string[];
-  };
-
-  const skillGroups: SkillGroup[] = [
-    {
-      category: "Programming Languages",
-      skills: [
-        "JavaScript",
-        "TypeScript",
-        "Python",
-        "PHP",
-        "Golang",
-        "HTML",
-        "CSS",
-        "Node.js",
-      ],
-    },
-    {
-      category: "Frontend Frameworks",
-      skills: [
-        "React.js",
-        "Next.js",
-        "Vue.js",
-        "Nuxt.js",
-        "Tailwind CSS",
-        "Bootstrap",
-      ],
-    },
-    {
-      category: "Backend Frameworks",
-      skills: ["Express.js", "Nest.js", "Flask", "Laravel"],
-    },
-    {
-      category: "Databases",
-      skills: ["MySQL", "PostgreSQL", "MongoDB"],
-    },
-    {
-      category: "Cloud & DevOps",
-      skills: ["Docker", "Kubernetes", "AWS CloudWatch", "Redis"],
-    },
-    {
-      category: "APIs & Integrations",
-      skills: [
-        "Google Maps API",
-        "Apollo.io API",
-        "Google Sheets API",
-        "Invoice Ninja API",
-        "Xero API",
-        "Shopify",
-      ],
-    },
-    {
-      category: "Payment & Communication",
-      skills: ["Stripe", "SendGrid"],
-    },
-    {
-      category: "Development Tools",
-      skills: ["Git", "Cursor", "Claude Code", "Figma", "Postman"],
-    },
-    {
-      category: "Project Management",
-      skills: ["Slack", "Trello", "Jira", "Notion"],
-    },
-  ];
-
-  type Education = {
-    institution: string;
-    degree: string;
-    period: string;
-    technologies?: string[];
-  };
-
-  const educations: Education[] = [
-    {
-      institution: "Boot.dev",
-      degree: "Backend Development Specialization",
-      period: "2025 - Present",
-      technologies: [
-        "Backend Development",
-        "Go",
-        "Python",
-        "System Design",
-        "Algorithms",
-      ],
-    },
-    {
-      institution: "Tanjungpura University, Indonesia",
-      degree: "Bachelor of Computer Science in Informatics",
-      period: "2015 - 2019",
-      technologies: [
-        "Computer Science",
-        "Software Engineering",
-        "Data Structures",
-        "Algorithms",
-      ],
-    },
-  ];
-
   return (
     <>
       {/* Hero Section */}
@@ -278,43 +49,29 @@ export default function Home() {
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
               <h1 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-4xl leading-tight font-black uppercase md:text-5xl lg:text-6xl xl:text-8xl xl:leading-none">
                 I&apos;m a{" "}
-                <span className="text-brand-accent">Software Engineer</span>
+                <span className="text-brand-accent">{personalInfo.title}</span>
               </h1>
             </div>
 
             <div className="w-full max-w-4xl space-y-6">
               <p className="text-xl leading-relaxed opacity-90 xl:text-2xl xl:leading-relaxed">
-                Software Engineer specializing in
+                {personalInfo.title} specializing in
               </p>
 
               {/* Enhanced badge groups with better organization */}
               <div className="space-y-4">
-                <div className="flex flex-wrap gap-3">
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    AI-Powered Development
-                  </span>
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    Golang
-                  </span>
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    Python
-                  </span>
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    React
-                  </span>
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    Vue.js
-                  </span>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    Remote Specialist
-                  </span>
-                  <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base">
-                    Cursor & Claude Code
-                  </span>
-                </div>
+                {aboutInfo.specializations.map((group, groupIndex) => (
+                  <div key={groupIndex} className="flex flex-wrap gap-3">
+                    {group.map((specialization, specIndex) => (
+                      <span
+                        key={specIndex}
+                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base"
+                      >
+                        {specialization}
+                      </span>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -349,23 +106,21 @@ export default function Home() {
               </h2>
             </div>
             <div className="space-y-8 text-base xl:text-lg">
-              <p className="leading-relaxed xl:leading-relaxed">
-                Software Engineer with{" "}
-                <span className="text-brand-accent font-semibold">
-                  6+ years
-                </span>{" "}
-                of experience building scalable web applications, APIs, and data
-                processing systems across diverse industries including
-                e-commerce, insurance, and SaaS platforms.
-              </p>
-              <p className="leading-relaxed xl:leading-relaxed">
-                Currently specializing in AI-assisted development and
-                automation, building sophisticated lead generation systems using
-                modern APIs and cloud technologies. Expert in end-to-end
-                development from backend data pipelines to customer-facing
-                storefronts, with a proven track record of delivering complex
-                projects from concept to production.
-              </p>
+              {aboutInfo.description.map((paragraph, index) => (
+                <p key={index} className="leading-relaxed xl:leading-relaxed">
+                  {index === 0 ? (
+                    <>
+                      Software Engineer with{" "}
+                      <span className="text-brand-accent font-semibold">
+                        {aboutInfo.yearsOfExperience}
+                      </span>{" "}
+                      {paragraph.replace("Software Engineer with 6+ years", "")}
+                    </>
+                  ) : (
+                    paragraph
+                  )}
+                </p>
+              ))}
             </div>
           </div>
         </div>

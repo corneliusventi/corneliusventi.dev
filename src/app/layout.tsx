@@ -2,6 +2,7 @@ import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { MobileNav } from "./components/MobileNav";
+import { personalInfo } from "./data/resume";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -74,8 +75,8 @@ export default function RootLayout({
               <ul className="flex justify-center gap-4 sm:gap-6 xl:gap-8">
                 <li>
                   <Link
-                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="https://github.com/corneliusventi"
+                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    href={personalInfo.links.github}
                     target="_blank"
                   >
                     GitHub
@@ -83,8 +84,8 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="https://linkedin.com/in/corneliusventi"
+                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    href={personalInfo.links.linkedin}
                     target="_blank"
                   >
                     LinkedIn
@@ -92,8 +93,8 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
-                    href="https://x.com/corneliusventi"
+                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    href={personalInfo.links.twitter}
                     target="_blank"
                   >
                     X/Twitter
@@ -101,14 +102,17 @@ export default function RootLayout({
                 </li>
               </ul>
             </nav>
-            
+
             {/* Divider */}
             <div className="border-brand-accent mb-4 w-32 border-t opacity-30"></div>
-            
+
             <div className="text-center text-xs opacity-60 sm:text-sm">
               <div className="relative">
                 <div className="from-brand-light absolute -inset-1 bg-gradient-to-r to-transparent opacity-3 blur-sm"></div>
-                <span className="relative">&copy; {new Date().getFullYear()} Cornelius Venti. All rights reserved.</span>
+                <span className="relative">
+                  &copy; {new Date().getFullYear()} {personalInfo.name}. All
+                  rights reserved.
+                </span>
               </div>
             </div>
           </div>
