@@ -8,8 +8,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cornelius Venti | Software Developer",
-  description: "Experienced Software Developer: Typescript, Python and more",
+  title: "Cornelius Venti | Senior Software Engineer | AI-Powered Development",
+  description:
+    "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Available for remote work.",
+  keywords:
+    "software engineer, golang, python, react, typescript, vue.js, AI development, remote developer, full stack developer, backend engineer, API development, web applications",
+  authors: [{ name: "Cornelius Venti", url: "https://corneliusventi.dev" }],
+  creator: "Cornelius Venti",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://corneliusventi.dev",
+    title:
+      "Cornelius Venti | Senior Software Engineer | AI-Powered Development",
+    description:
+      "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with modern technologies.",
+    siteName: "Cornelius Venti Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cornelius Venti | Senior Software Engineer",
+    description:
+      "6+ years experience in Golang, Python, React. AI-assisted development specialist.",
+    creator: "@corneliusventi",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://corneliusventi.dev",
+  },
 };
 
 export default function RootLayout({
@@ -20,45 +53,104 @@ export default function RootLayout({
   return (
     <html lang="en" className={geistMono.variable}>
       <body className="bg-brand-dark text-brand-light min-h-screen w-screen font-mono antialiased">
-        <header className="absolute inset-x-0 top-0">
-          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
-            <Link href="/">
-              <h1 className="text-2xl">Cornelius Venti</h1>
+        <header className="absolute inset-x-0 top-0 z-50">
+          <div className="container mx-auto flex flex-col justify-between p-4 sm:p-6 xl:flex-row xl:p-8">
+            <Link href="/" className="mb-4 xl:mb-0">
+              <h1 className="text-xl font-semibold sm:text-2xl">
+                Cornelius Venti
+              </h1>
             </Link>
-            <nav>
-              <ul className="flex gap-4 xl:gap-8">
+            <nav className="overflow-x-auto">
+              <ul className="flex min-w-max gap-3 whitespace-nowrap sm:gap-4 xl:gap-8">
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="/projects">Projects</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="#about"
+                  >
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="/skills">Skills</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="#experiences"
+                  >
+                    Experiences
+                  </Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="/about">About</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="#skills"
+                  >
+                    Skills
+                  </Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="mailto:hello@corneliusventi.dev">Contact</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="#projects"
+                  >
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="#educations"
+                  >
+                    Educations
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="mailto:hello@corneliusventi.dev"
+                  >
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </nav>
           </div>
         </header>
         {children}
-        <footer className="absolute inset-x-0 bottom-0">
-          <div className="container mx-auto flex flex-col justify-between p-8 xl:flex-row">
+        <footer>
+          <div className="container mx-auto flex flex-col items-center justify-center p-4 sm:p-6 xl:p-8">
             <nav>
-              <ul className="flex gap-4 xl:gap-8">
+              <ul className="flex justify-center gap-4 sm:gap-6 xl:gap-8">
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="https://github.com/corneliusventi" target="_blank">GitHub</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="https://github.com/corneliusventi"
+                    target="_blank"
+                  >
+                    GitHub
+                  </Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="https://linkedin.com/in/corneliusventi" target="_blank">LinkedIn</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="https://linkedin.com/in/corneliusventi"
+                    target="_blank"
+                  >
+                    LinkedIn
+                  </Link>
                 </li>
                 <li>
-                  <Link className="hover:underline hover:underline-offset-4" href="https://x.com/corneliusventi" target="_blank">X/Twitter</Link>
+                  <Link
+                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    href="https://x.com/corneliusventi"
+                    target="_blank"
+                  >
+                    X/Twitter
+                  </Link>
                 </li>
               </ul>
             </nav>
+            <div className="mt-4 text-center text-xs opacity-60 sm:text-sm">
+              © 2025 Cornelius Venti. All rights reserved.
+            </div>
           </div>
         </footer>
       </body>
