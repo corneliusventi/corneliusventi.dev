@@ -53,7 +53,7 @@ export const personalInfo: PersonalInfo = {
   links: {
     portfolio: "https://corneliusventi.dev",
     resume: "https://corneliusventi.dev/resume.pdf",
-    profile: "https://corneliusventi.dev/profile.png",
+    profile: "https://corneliusventi.dev/profile.jpg",
     github: "https://github.com/corneliusventi",
     linkedin: "https://linkedin.com/in/corneliusventi",
     twitter: "https://x.com/corneliusventi",
