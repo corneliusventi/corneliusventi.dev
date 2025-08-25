@@ -56,15 +56,18 @@ export default function RootLayout({
         <header className="absolute inset-x-0 top-0 z-50">
           <div className="container mx-auto flex flex-col justify-between p-4 sm:p-6 xl:flex-row xl:p-8">
             <Link href="/" className="mb-4 xl:mb-0">
-              <h1 className="text-xl font-semibold sm:text-2xl">
-                Cornelius Venti
-              </h1>
+              <div className="relative">
+                <div className="from-brand-accent absolute -inset-1 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
+                <h1 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-xl font-bold sm:text-2xl">
+                  <span className="text-brand-accent">Cornel</span>ius Venti
+                </h1>
+              </div>
             </Link>
             <nav className="overflow-x-auto">
               <ul className="flex min-w-max gap-3 whitespace-nowrap sm:gap-4 xl:gap-8">
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="#about"
                   >
                     About
@@ -72,7 +75,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="#experiences"
                   >
                     Experiences
@@ -80,7 +83,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="#skills"
                   >
                     Skills
@@ -88,7 +91,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="#projects"
                   >
                     Projects
@@ -96,7 +99,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="#educations"
                   >
                     Educations
@@ -104,7 +107,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:scale-105 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="mailto:hello@corneliusventi.dev"
                   >
                     Contact
@@ -117,11 +120,11 @@ export default function RootLayout({
         {children}
         <footer>
           <div className="container mx-auto flex flex-col items-center justify-center p-4 sm:p-6 xl:p-8">
-            <nav>
+            <nav className="mb-6">
               <ul className="flex justify-center gap-4 sm:gap-6 xl:gap-8">
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="https://github.com/corneliusventi"
                     target="_blank"
                   >
@@ -130,7 +133,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="https://linkedin.com/in/corneliusventi"
                     target="_blank"
                   >
@@ -139,7 +142,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="text-sm transition-colors hover:underline hover:underline-offset-4 sm:text-base"
+                    className="text-sm transition-all duration-300 hover:text-brand-accent hover:underline hover:underline-offset-4 sm:text-base"
                     href="https://x.com/corneliusventi"
                     target="_blank"
                   >
@@ -148,8 +151,15 @@ export default function RootLayout({
                 </li>
               </ul>
             </nav>
-            <div className="mt-4 text-center text-xs opacity-60 sm:text-sm">
-              &copy; 2025 Cornelius Venti. All rights reserved.
+            
+            {/* Divider */}
+            <div className="border-brand-accent mb-4 w-32 border-t opacity-30"></div>
+            
+            <div className="text-center text-xs opacity-60 sm:text-sm">
+              <div className="relative">
+                <div className="from-brand-light absolute -inset-1 bg-gradient-to-r to-transparent opacity-3 blur-sm"></div>
+                <span className="relative">&copy; {new Date().getFullYear()} Cornelius Venti. All rights reserved.</span>
+              </div>
             </div>
           </div>
         </footer>

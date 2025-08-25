@@ -3,6 +3,7 @@
 @theme {
   --color-brand-light: #f5e6ca;
   --color-brand-dark: #343f56;
+  --color-brand-accent: #8b9dc3;
 
   --font-mono: var(--font-geist-mono);
 }
