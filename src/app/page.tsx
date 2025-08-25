@@ -1,12 +1,12 @@
 import Image from "next/image";
-import icon from "./icon.png";
+import profile from "./profile.png";
 
 export default function Home() {
   return (
     <main className="container mx-auto flex min-h-screen flex-col items-center justify-center px-8 xl:flex-row-reverse">
       <Image
         className="h-auto w-2/3 xl:w-auto"
-        src={icon}
+        src={profile}
         width={512}
         height={512}
         alt="Cornelius Venti Icon"
