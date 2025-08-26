@@ -6,6 +6,7 @@ import {
   experiences,
   skillGroups,
   educations,
+  certificates,
 } from '../../data/resume';
 
 export async function GET() {
@@ -15,6 +16,7 @@ export async function GET() {
     projects,
     experiences,
     skills: skillGroups,
+    certificates,
     education: educations,
   };
 

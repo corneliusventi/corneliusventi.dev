@@ -9,6 +9,7 @@ import {
   experiences,
   skillGroups,
   educations,
+  certificates,
 } from "./data/resume";
 
 export default function Home() {
@@ -343,6 +344,70 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="relative flex items-center justify-center py-8">
+          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
+          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
+        </div>
+      </div>
+
+      {/* Certificates Section */}
+      <section id="certificates" className="relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 -z-10">
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
+          <div className="absolute top-0 right-0 h-full w-full opacity-6">
+            <div className="border-brand-accent absolute top-16 right-12 h-32 w-32 rotate-12 transform border-2 opacity-40"></div>
+            <div className="border-brand-light absolute bottom-24 left-16 h-20 w-20 -rotate-45 transform border-2"></div>
+          </div>
+        </div>
+        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
+          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
+            <div className="relative">
+              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+                Certificates
+              </h2>
+            </div>
+            <div className="space-y-6 text-base md:space-y-8 xl:text-lg">
+              {certificates.map((certificate, index) => (
+                <div key={index} className="border-brand-accent border-l-4 pl-6 md:pl-8">
+                  <Link
+                    href={certificate.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand-accent transition-all duration-300 hover:underline hover:underline-offset-4"
+                  >
+                    <h3 className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
+                      {certificate.title}
+                    </h3>
+                  </Link>
+                  <p className="mb-1 text-base opacity-90 md:text-lg xl:text-xl">
+                    {certificate.issuer}
+                  </p>
+                  <p className="text-brand-accent mb-4 text-sm font-semibold opacity-80 md:text-base xl:text-lg">
+                    {certificate.date}
+                  </p>
+                  {certificate.technologies && (
+                    <div className="flex flex-wrap gap-2">
+                      {certificate.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

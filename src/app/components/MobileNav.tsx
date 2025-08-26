@@ -15,6 +15,7 @@ export function MobileNav() {
     { href: "#experiences", label: "Experiences" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
+    { href: "#certificates", label: "Certificates" },
     { href: "#educations", label: "Educations" },
     { href: `mailto:${personalInfo.email}`, label: "Contact" },
   ];

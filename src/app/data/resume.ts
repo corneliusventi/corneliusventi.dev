@@ -19,6 +19,14 @@ export type Education = {
   technologies?: string[];
 };
 
+export type Certificate = {
+  title: string;
+  date: string;
+  href: string;
+  issuer: string;
+  technologies?: string[];
+};
+
 export type Project = {
   name: string;
   description: string;
@@ -257,6 +265,51 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Project Management",
     skills: ["Slack", "Trello", "Jira", "Notion"],
+  },
+];
+
+export const certificates: Certificate[] = [
+  {
+    title: "Learn to Code in Python",
+    date: "Feb 17, 2025",
+    href: "https://www.boot.dev/certificates/9cf0039d-40d3-413f-b7fa-fc5f10c24f63",
+    issuer: "Boot.dev",
+    technologies: ["Python", "Programming Fundamentals", "Variables", "Functions"],
+  },
+  {
+    title: "Learn Object Oriented Programming in Python",
+    date: "Feb 20, 2025",
+    href: "https://www.boot.dev/certificates/7fd1477f-a452-41b2-bfa4-487a2daee12e",
+    issuer: "Boot.dev",
+    technologies: ["Python", "OOP", "Classes", "Inheritance", "Polymorphism"],
+  },
+  {
+    title: "Learn Linux",
+    date: "Feb 18, 2025",
+    href: "https://www.boot.dev/certificates/cb012954-b97c-4ab2-bbdd-1414ec974465",
+    issuer: "Boot.dev",
+    technologies: ["Linux", "Command Line", "Shell Scripting", "File Systems"],
+  },
+  {
+    title: "Learn Git",
+    date: "Feb 18, 2025",
+    href: "https://www.boot.dev/certificates/9adf7f3a-372e-4863-98ca-560ce9d83a9f",
+    issuer: "Boot.dev",
+    technologies: ["Git", "Version Control", "GitHub", "Branching", "Merging"],
+  },
+  {
+    title: "Learn Functional Programming in Python",
+    date: "Feb 25, 2025",
+    href: "https://www.boot.dev/certificates/70b21f88-0bc8-448b-9ed3-14a3d0ffdf90",
+    issuer: "Boot.dev",
+    technologies: ["Python", "Functional Programming", "Lambda Functions", "Map", "Filter"],
+  },
+  {
+    title: "Learn Data Structures and Algorithms in Python",
+    date: "Apr 10, 2025",
+    href: "https://www.boot.dev/certificates/e8e5051f-127f-4ff8-86c5-09d2092af4bc",
+    issuer: "Boot.dev",
+    technologies: ["Python", "Data Structures", "Algorithms", "Big O", "Trees", "Graphs"],
   },
 ];
 
