@@ -398,7 +398,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    category: "Soft Skills & Leadership",
+    category: "Soft Skills & Professional",
     skills: [
       "Remote Work",
       "Cross-cultural Communication",
@@ -406,10 +406,7 @@ export const skillGroups: SkillGroup[] = [
       "Project Management",
       "Team Collaboration",
       "Client Communication",
-      "Agile Methodologies",
       "Technical Documentation",
-      "Mentoring",
-      "Requirements Analysis",
     ],
   },
 ];
