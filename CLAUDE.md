@@ -16,39 +16,70 @@ Code is automatically formatted with Prettier using the Tailwind CSS plugin. ESL
 
 ## Architecture
 
-This is a personal portfolio website built with Next.js 15 and React 19, using the App Router architecture.
+This is a comprehensive personal portfolio website built with Next.js 15 and React 19, using the App Router architecture. Features a single-page application with multiple sections showcasing professional experience, skills, projects, certifications, and education.
 
 ### Tech Stack
 - **Framework**: Next.js 15 with App Router
 - **UI**: React 19, TypeScript
-- **Styling**: Tailwind CSS v4 with custom brand colors
+- **Styling**: Tailwind CSS v4 with custom brand colors and accent color system
 - **Font**: Geist Mono (Google Font)
+- **Development**: AI-assisted with Claude Code and Cursor
 
 ### Project Structure
 ```
 src/app/
-├── layout.tsx          # Root layout with header/footer navigation
-├── page.tsx           # Homepage with hero section
-├── globals.css        # Tailwind CSS with custom theme
-├── about/page.tsx     # About page
-├── projects/page.tsx  # Projects showcase
-└── skills/page.tsx    # Skills/technologies page
+├── layout.tsx                    # Root layout with responsive header/footer
+├── page.tsx                     # Single-page portfolio with all sections
+├── globals.css                  # Tailwind CSS with custom theme variables
+├── components/
+│   └── MobileNav.tsx            # Responsive mobile navigation component
+├── data/
+│   └── resume.ts               # Centralized resume data and types
+└── api/
+    └── resume/route.ts         # API endpoint for resume data
 ```
 
 ### Design System
-- **Colors**: Custom brand colors defined in globals.css
+- **Colors**: Custom brand colors with accent system
   - `--color-brand-light`: #f5e6ca (cream/beige)
-  - `--color-brand-dark`: #343f56 (dark blue-gray)
+  - `--color-brand-dark`: #343f56 (dark blue-gray)  
+  - `--color-brand-accent`: #8b9dc3 (periwinkle blue)
 - **Typography**: Geist Mono font family with monospace styling
-- **Layout**: Responsive design with container-based layouts, mobile-first approach
+- **Layout**: Responsive design with mobile-first approach, consistent container widths
+- **Components**: Reusable badge system with hover effects and accent color theming
 
-### Key Components
-- **Layout**: Fixed header and footer with navigation links
-- **Navigation**: Projects, Skills, About, Contact (mailto link)
-- **Footer**: Social media links (GitHub, LinkedIn, X/Twitter)
+### Portfolio Sections
+- **Hero**: Profile image with availability status badge and dual CTAs
+- **About**: Personal summary with specialization badges
+- **Experiences**: Professional work history with technology badges
+- **Skills**: Categorized skill groups with interactive badges
+- **Projects**: 7 projects including professional and learning projects
+- **Certificates**: 6 Boot.dev certifications with technology tags
+- **Education**: Academic background with relevant technologies
+
+### Key Features
+- **Responsive Navigation**: Desktop menu and mobile hamburger navigation
+- **Status Badge**: "Open to Opportunities" indicator with pulsing animation
+- **Dual CTA Buttons**: "Get in Touch" (primary) and "Learn More" (secondary)
+- **Interactive Badges**: Hover effects on all technology/skill badges
+- **API Integration**: `/api/resume` endpoint serving complete portfolio data
+- **SEO Optimization**: Comprehensive sitemap with section anchors
+- **Mobile Optimized**: Responsive design with mobile-friendly badge sizing
+
+### Data Structure
+All portfolio content is centralized in `src/app/data/resume.ts` with TypeScript types:
+- **PersonalInfo**: Contact details and social links
+- **AboutInfo**: Professional summary and specializations
+- **Experience**: Work history with achievements and technologies
+- **SkillGroup**: Categorized technical skills
+- **Project**: Portfolio projects with descriptions and tech stacks
+- **Certificate**: Professional certifications with technologies
+- **Education**: Academic background and specializations
 
 ### Configuration Notes
 - TypeScript path aliases: `@/*` maps to `./src/*`
 - ESLint extends Next.js core web vitals and TypeScript configurations
 - Prettier configured with Tailwind CSS class sorting
 - Uses Tailwind CSS v4 syntax with `@import` and `@theme` directives
+- Consistent accent color system throughout all components
+- Mobile-friendly badge sizing: `px-3 py-1 text-xs xl:text-sm`
