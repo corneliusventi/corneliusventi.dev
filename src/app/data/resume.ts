@@ -87,6 +87,20 @@ export const aboutInfo: AboutInfo = {
 
 export const projects: Project[] = [
   {
+    name: "SiftlyAPI",
+    description:
+      "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
+    href: "https://siftlyapi.com/",
+    tech: ["Golang", "PostgreSQL", "Redis", "Docker", "MaxMind GeoIP", "WHOIS", "Claude Code"],
+  },
+  {
+    name: "corneliusventi.dev",
+    description:
+      "Modern portfolio website built with Next.js 15 and React 19 featuring responsive design, accent color system, mobile navigation, status badge, and comprehensive sections for experience, skills, projects, certificates, and education. Includes API endpoints and SEO optimization.",
+    href: "https://corneliusventi.dev/",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "API Routes", "SEO", "Claude Code"],
+  },
+  {
     name: "Terminal-based Portfolio",
     description:
       "A personal portfolio website built as an interactive terminal-style interface. Features modern development tooling with ESLint configuration, lint-staged pre-commit hooks, and comprehensive build pipeline for development and production environments.",
@@ -94,11 +108,60 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Next.js", "CSS", "ESLint"],
   },
   {
-    name: "SiftlyAPI",
+    name: "Build a Static Site Generator in Python",
     description:
-      "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
-    href: "https://siftlyapi.com/",
-    tech: ["Golang", "PostgreSQL", "Redis", "Docker", "MaxMind GeoIP", "WHOIS"],
+      "Build a static site generator from scratch using Python to understand how SEO and performance-optimized tools like Hugo work. Features Markdown processing, HTML generation, and static file management for web deployment.",
+    href: "https://github.com/corneliusventi/static-site-generator",
+    tech: [
+      "Python",
+      "Markdown",
+      "HTML",
+      "CSS",
+      "Static Sites",
+      "Web Development",
+    ],
+  },
+  {
+    name: "Build a Maze Solver in Python",
+    description:
+      "Build a GUI application using Python and Tkinter that generates randomized mazes and systematically solves them using algorithms. Features visual maze drawing, pathfinding algorithms, and interactive problem-solving.",
+    href: "https://github.com/corneliusventi/maze-solver",
+    tech: [
+      "Python",
+      "Tkinter",
+      "Algorithms",
+      "GUI",
+      "Pathfinding",
+      "Visualization",
+    ],
+  },
+  {
+    name: "Build a Bookbot in Python",
+    description:
+      "Build a command-line application that performs data analysis on text files and novels. Features word counting, character frequency analysis, professional development setup with Git, and beautiful analytics reporting.",
+    href: "https://github.com/corneliusventi/bookbot",
+    tech: [
+      "Python",
+      "CLI",
+      "Data Analysis",
+      "Text Processing",
+      "Git",
+      "Reporting",
+    ],
+  },
+  {
+    name: "Build Asteroids using Python and Pygame",
+    description:
+      "Build a clone of the classic Asteroids arcade game using Pygame and object-oriented programming. Features game loops, collision detection, sprite management, user input handling, and FPS control.",
+    href: "https://github.com/corneliusventi/asteroids",
+    tech: [
+      "Python",
+      "Pygame",
+      "Game Development",
+      "OOP",
+      "Collision Detection",
+      "Sprites",
+    ],
   },
 ];
 
@@ -144,6 +207,7 @@ export const experiences: Experience[] = [
       "Stripe",
       "Invoice Ninja",
       "Xero API",
+      "Cursor",
     ],
   },
   {
@@ -274,7 +338,12 @@ export const certificates: Certificate[] = [
     date: "Feb 17, 2025",
     href: "https://www.boot.dev/certificates/9cf0039d-40d3-413f-b7fa-fc5f10c24f63",
     issuer: "Boot.dev",
-    technologies: ["Python", "Programming Fundamentals", "Variables", "Functions"],
+    technologies: [
+      "Python",
+      "Programming Fundamentals",
+      "Variables",
+      "Functions",
+    ],
   },
   {
     title: "Learn Object Oriented Programming in Python",
@@ -302,14 +371,27 @@ export const certificates: Certificate[] = [
     date: "Feb 25, 2025",
     href: "https://www.boot.dev/certificates/70b21f88-0bc8-448b-9ed3-14a3d0ffdf90",
     issuer: "Boot.dev",
-    technologies: ["Python", "Functional Programming", "Lambda Functions", "Map", "Filter"],
+    technologies: [
+      "Python",
+      "Functional Programming",
+      "Lambda Functions",
+      "Map",
+      "Filter",
+    ],
   },
   {
     title: "Learn Data Structures and Algorithms in Python",
     date: "Apr 10, 2025",
     href: "https://www.boot.dev/certificates/e8e5051f-127f-4ff8-86c5-09d2092af4bc",
     issuer: "Boot.dev",
-    technologies: ["Python", "Data Structures", "Algorithms", "Big O", "Trees", "Graphs"],
+    technologies: [
+      "Python",
+      "Data Structures",
+      "Algorithms",
+      "Big O",
+      "Trees",
+      "Graphs",
+    ],
   },
 ];
 
