@@ -73,6 +73,49 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+
+              {/* CTA Buttons */}
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
+                <Link
+                  href={`mailto:${personalInfo.email}`}
+                  className="group bg-brand-accent text-brand-dark hover:bg-opacity-90 hover:shadow-brand-accent/30 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold tracking-wide uppercase shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                >
+                  Get in Touch
+                  <svg
+                    className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </Link>
+
+                <Link
+                  href="#about"
+                  className="group border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-dark inline-flex items-center justify-center rounded-full border-2 px-8 py-4 text-base font-bold tracking-wide uppercase transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                >
+                  Learn More
+                  <svg
+                    className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-y-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -90,7 +133,7 @@ export default function Home() {
       <section id="about" className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-accent/10 to-brand-dark absolute inset-0 bg-gradient-to-bl opacity-30"></div>
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 right-0 h-full w-full opacity-5">
             <div className="border-brand-accent absolute top-20 right-10 h-28 w-28 -rotate-12 transform border-2 opacity-60"></div>
             <div className="border-brand-light absolute bottom-32 left-10 h-20 w-20 rotate-45 transform border-2"></div>
@@ -138,7 +181,7 @@ export default function Home() {
       <section id="experiences" className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-accent/8 to-brand-dark absolute inset-0 bg-gradient-to-tr opacity-25"></div>
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 left-0 h-full w-full opacity-8">
             <div className="border-brand-light absolute top-16 left-16 h-24 w-24 rotate-12 transform border-2"></div>
             <div className="border-brand-accent absolute top-40 right-12 h-32 w-32 -rotate-12 transform border-2 opacity-50"></div>
@@ -202,7 +245,7 @@ export default function Home() {
       <section id="skills" className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-tl opacity-35"></div>
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 right-0 h-full w-full opacity-6">
             <div className="border-brand-accent absolute top-12 right-20 h-36 w-36 rotate-45 transform border-2 opacity-50"></div>
             <div className="border-brand-light absolute bottom-16 left-12 h-20 w-20 -rotate-12 transform border-2"></div>
@@ -255,7 +298,7 @@ export default function Home() {
       <section id="projects" className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-accent/8 to-brand-dark absolute inset-0 bg-gradient-to-br opacity-28"></div>
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 left-0 h-full w-full opacity-7">
             <div className="border-brand-light absolute top-24 left-24 h-28 w-28 -rotate-45 transform border-2"></div>
             <div className="border-brand-light absolute right-16 bottom-20 h-24 w-24 rotate-12 transform border-2"></div>
@@ -314,7 +357,7 @@ export default function Home() {
       <section id="educations" className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-tr opacity-32"></div>
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 right-0 h-full w-full opacity-6">
             <div className="border-brand-light absolute top-20 right-32 h-32 w-32 rotate-30 transform border-2"></div>
             <div className="border-brand-light absolute bottom-32 left-20 h-18 w-18 -rotate-30 transform border-2"></div>
