@@ -91,14 +91,30 @@ export const projects: Project[] = [
     description:
       "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
     href: "https://siftlyapi.com/",
-    tech: ["Golang", "PostgreSQL", "Redis", "Docker", "MaxMind GeoIP", "WHOIS", "Claude Code"],
+    tech: [
+      "Golang",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "MaxMind GeoIP",
+      "WHOIS",
+      "Claude Code",
+    ],
   },
   {
     name: "corneliusventi.dev",
     description:
       "Modern portfolio website built with Next.js 15 and React 19 featuring responsive design, accent color system, mobile navigation, status badge, and comprehensive sections for experience, skills, projects, certificates, and education. Includes API endpoints and SEO optimization.",
     href: "https://corneliusventi.dev/",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "API Routes", "SEO", "Claude Code"],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "API Routes",
+      "SEO",
+      "Claude Code",
+    ],
   },
   {
     name: "Terminal-based Portfolio",
@@ -108,7 +124,7 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Next.js", "CSS", "ESLint"],
   },
   {
-    name: "Build a Static Site Generator in Python",
+    name: "Static Site Generator",
     description:
       "Build a static site generator from scratch using Python to understand how SEO and performance-optimized tools like Hugo work. Features Markdown processing, HTML generation, and static file management for web deployment.",
     href: "https://github.com/corneliusventi/static-site-generator",
@@ -122,7 +138,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Build a Maze Solver in Python",
+    name: "Maze Solver",
     description:
       "Build a GUI application using Python and Tkinter that generates randomized mazes and systematically solves them using algorithms. Features visual maze drawing, pathfinding algorithms, and interactive problem-solving.",
     href: "https://github.com/corneliusventi/maze-solver",
@@ -136,7 +152,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Build a Bookbot in Python",
+    name: "Bookbot",
     description:
       "Build a command-line application that performs data analysis on text files and novels. Features word counting, character frequency analysis, professional development setup with Git, and beautiful analytics reporting.",
     href: "https://github.com/corneliusventi/bookbot",
@@ -150,7 +166,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Build Asteroids using Python and Pygame",
+    name: "Asteroids",
     description:
       "Build a clone of the classic Asteroids arcade game using Pygame and object-oriented programming. Features game loops, collision detection, sprite management, user input handling, and FPS control.",
     href: "https://github.com/corneliusventi/asteroids",
