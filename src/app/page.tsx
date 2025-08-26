@@ -41,7 +41,7 @@ export default function Home() {
               priority
             />
             {/* Status Badge */}
-            <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-30 hover:border-opacity-50 mb-10 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:mb-12 xl:mb-0">
+            <span className="bg-brand-light bg-opacity-20 text-brand-dark border-brand-light border-opacity-50 hover:bg-opacity-30 hover:border-opacity-70 mb-10 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:mb-12 xl:mb-0">
               <div className="bg-brand-dark h-2 w-2 animate-pulse rounded-full"></div>
               Open to Opportunities
             </span>
