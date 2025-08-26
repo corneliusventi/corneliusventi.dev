@@ -31,15 +31,20 @@ export default function Home() {
 
         <div className="container mx-auto flex min-h-screen flex-col items-start justify-center px-6 py-20 md:px-8 md:py-24 xl:flex-row-reverse xl:items-center xl:gap-20 xl:py-32">
           {/* Profile Image with Enhanced Styling */}
-          <div className="flex w-full justify-center xl:w-auto xl:justify-center">
+          <div className="flex w-full flex-col items-center gap-4 xl:w-auto">
             <Image
-              className="border-brand-accent border-opacity-50 relative mb-10 h-auto w-2/3 rounded-full border-4 md:mb-12 xl:mb-0 xl:w-auto"
+              className="border-brand-accent border-opacity-50 h-auto w-2/3 rounded-full border-4 xl:w-auto"
               src={profile}
               width={512}
               height={512}
               alt="Cornelius Venti Icon"
               priority
             />
+            {/* Status Badge */}
+            <span className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-30 hover:border-opacity-50 mb-10 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:mb-12 xl:mb-0">
+              <div className="bg-brand-dark h-2 w-2 animate-pulse rounded-full"></div>
+              Open to Opportunities
+            </span>
           </div>
 
           {/* Content with Enhanced Typography */}
