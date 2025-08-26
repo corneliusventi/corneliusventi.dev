@@ -71,9 +71,17 @@ export const metadata = {
     images: [
       {
         url: personalInfo.links.profile,
+        width: 1200,
+        height: 1200,
+        alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+        type: 'image/jpeg',
+      },
+      {
+        url: personalInfo.links.profile,
         width: 400,
         height: 400,
         alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+        type: 'image/jpeg',
       },
     ],
     profile: {
@@ -84,13 +92,16 @@ export const metadata = {
     },
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     site: "@corneliusventi",
     creator: "@corneliusventi",
     title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
       "6+ years experience in Golang, Python, React. AI-assisted development specialist. Remote-first professional across Indonesia & Singapore.",
-    images: [personalInfo.links.profile],
+    images: {
+      url: personalInfo.links.profile,
+      alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+    },
   },
   alternates: {
     canonical: personalInfo.links.portfolio,
