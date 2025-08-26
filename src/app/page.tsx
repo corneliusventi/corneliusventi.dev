@@ -144,7 +144,7 @@ export default function Home() {
           <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
             <div className="relative">
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
                 About
               </h2>
             </div>
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
             <div className="relative">
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
                 Experiences
               </h2>
             </div>
@@ -256,7 +256,7 @@ export default function Home() {
           <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
             <div className="relative">
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
                 Skills
               </h2>
             </div>
@@ -308,7 +308,7 @@ export default function Home() {
           <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
             <div className="relative">
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
                 Projects
               </h2>
             </div>
@@ -367,7 +367,7 @@ export default function Home() {
           <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
             <div className="relative">
               <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
                 Educations
               </h2>
             </div>
