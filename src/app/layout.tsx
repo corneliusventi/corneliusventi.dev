@@ -12,38 +12,101 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: `${personalInfo.name} | ${personalInfo.headline}`,
   description:
-    "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Available for remote work.",
-  keywords:
-    "software engineer, golang, python, react, typescript, vue.js, AI development, remote developer, full stack developer, backend engineer, API development, web applications",
-  authors: [{ name: "Cornelius Venti", url: "https://corneliusventi.dev" }],
-  creator: "Cornelius Venti",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://corneliusventi.dev",
-    title: `${personalInfo.name} | ${personalInfo.headline}`,
-    description:
-      "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with modern technologies.",
-    siteName: "Cornelius Venti Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${personalInfo.name} | ${personalInfo.headline}`,
-    description:
-      "6+ years experience in Golang, Python, React. AI-assisted development specialist.",
-    creator: "@corneliusventi",
+    "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems across Indonesia and Singapore. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Remote-first professional available for international opportunities.",
+  keywords: [
+    // Core technical skills
+    "software engineer", "golang developer", "python developer", "react developer", 
+    "typescript", "vue.js", "next.js", "node.js", "API development",
+    // Specializations
+    "AI development", "AI-assisted development", "machine learning", "automation",
+    "scalable web applications", "data processing systems", "microservices",
+    // Experience & roles
+    "full stack developer", "backend engineer", "frontend developer", 
+    "6 years experience", "senior developer",
+    // Geographic & work style
+    "remote developer", "indonesia developer", "singapore developer", 
+    "southeast asia", "international remote work", "cross-cultural communication",
+    // Industries
+    "e-commerce developer", "saas developer", "insurance technology", 
+    "financial systems", "enterprise software",
+    // Technologies
+    "docker", "kubernetes", "postgresql", "mongodb", "redis", "aws", 
+    "gitlab", "stripe", "shopify", "google maps api"
+  ].join(", "),
+  authors: [{ name: personalInfo.name, url: personalInfo.links.portfolio }],
+  creator: personalInfo.name,
+  publisher: personalInfo.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: "https://corneliusventi.dev",
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.YANDEX_VERIFICATION,
+    yahoo: process.env.YAHOO_VERIFICATION,
   },
+  openGraph: {
+    type: "profile",
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
+    url: personalInfo.links.portfolio,
+    title: `${personalInfo.name} | ${personalInfo.headline}`,
+    description:
+      "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems across Indonesia and Singapore. Specializing in AI-assisted development with modern technologies.",
+    siteName: "corneliusventi.dev",
+    images: [
+      {
+        url: personalInfo.links.profile,
+        width: 400,
+        height: 400,
+        alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+      },
+    ],
+    profile: {
+      firstName: "Cornelius",
+      lastName: "Venti",
+      username: "corneliusventi",
+      gender: "male",
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@corneliusventi",
+    creator: "@corneliusventi",
+    title: `${personalInfo.name} | ${personalInfo.headline}`,
+    description:
+      "6+ years experience in Golang, Python, React. AI-assisted development specialist. Remote-first professional across Indonesia & Singapore.",
+    images: [personalInfo.links.profile],
+  },
+  alternates: {
+    canonical: personalInfo.links.portfolio,
+    languages: {
+      'en-US': personalInfo.links.portfolio,
+      'id-ID': personalInfo.links.portfolio,
+    },
+  },
+  category: "technology",
+  classification: "Software Engineering Portfolio",
+  referrer: "origin-when-cross-origin",
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5e6ca" },
+    { media: "(prefers-color-scheme: dark)", color: "#343f56" },
+  ],
 };
 
 export default function RootLayout({
