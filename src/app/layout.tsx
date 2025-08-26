@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cornelius Venti | Senior Software Engineer | AI-Powered Development",
+  title: `${personalInfo.name} | ${personalInfo.headline}`,
   description:
     "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Available for remote work.",
   keywords:
@@ -21,15 +21,14 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://corneliusventi.dev",
-    title:
-      "Cornelius Venti | Senior Software Engineer | AI-Powered Development",
+    title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
       "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Specializing in AI-assisted development with modern technologies.",
     siteName: "Cornelius Venti Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cornelius Venti | Senior Software Engineer",
+    title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
       "6+ years experience in Golang, Python, React. AI-assisted development specialist.",
     creator: "@corneliusventi",

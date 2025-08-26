@@ -37,6 +37,7 @@ export type Project = {
 export type PersonalInfo = {
   name: string;
   title: string;
+  headline: string;
   email: string;
   location: string;
   links: {
@@ -58,6 +59,7 @@ export type AboutInfo = {
 export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
   title: "Software Engineer",
+  headline: "Software Engineer | 6+ Years Building Scalable APIs & Web Applications | AI-Assisted Development Specialist",
   email: "cornelius@corneliusventi.dev",
   location: "Indonesia",
   links: {
