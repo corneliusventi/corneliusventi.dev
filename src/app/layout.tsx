@@ -100,6 +100,15 @@ export default function RootLayout({
                     X/Twitter
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    href={personalInfo.links.resume}
+                    target="_blank"
+                  >
+                    Resume
+                  </Link>
+                </li>
               </ul>
             </nav>
 
