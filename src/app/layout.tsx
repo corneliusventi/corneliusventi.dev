@@ -2,7 +2,7 @@ import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { MobileNav } from "./components/MobileNav";
-import { personalInfo } from "./data/resume";
+import { personalInfo } from "./resume";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],

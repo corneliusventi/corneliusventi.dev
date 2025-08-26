@@ -30,13 +30,14 @@ This is a comprehensive personal portfolio website built with Next.js 15 and Rea
 src/app/
 ├── layout.tsx                    # Root layout with responsive header/footer
 ├── page.tsx                     # Single-page portfolio with all sections
+├── resume.ts                   # Centralized resume data and types
 ├── globals.css                  # Tailwind CSS with custom theme variables
 ├── components/
 │   └── MobileNav.tsx            # Responsive mobile navigation component
-├── data/
-│   └── resume.ts               # Centralized resume data and types
-└── api/
-    └── resume/route.ts         # API endpoint for resume data
+├── resume.json/
+│   └── route.ts                # JSON endpoint for resume data
+└── resume.pdf/
+    └── route.tsx               # Auto-generated PDF resume endpoint
 ```
 
 ### Design System
@@ -62,12 +63,22 @@ src/app/
 - **Status Badge**: "Open to Opportunities" indicator with pulsing animation
 - **Dual CTA Buttons**: "Get in Touch" (primary) and "Learn More" (secondary)
 - **Interactive Badges**: Hover effects on all technology/skill badges
-- **API Integration**: `/api/resume` endpoint serving complete portfolio data
+- **Auto-Generated PDF Resume**: Dynamic PDF creation using React-PDF with same data source
+- **API Integration**: `/resume.json` endpoint serving complete portfolio data
 - **SEO Optimization**: Comprehensive sitemap with section anchors
 - **Mobile Optimized**: Responsive design with mobile-friendly badge sizing
 
+### PDF Resume Generation
+The portfolio includes an auto-generated PDF resume feature (`/resume.pdf`) that:
+- Uses the same centralized data source (`resume.ts`) as the website
+- Generates professional PDF using React-PDF library
+- Matches portfolio styling with clean, ATS-friendly format
+- Includes sections: Work Experience, Education, Skills
+- Optimized for both digital viewing and printing
+- Minimal design focusing on essential professional information
+
 ### Data Structure
-All portfolio content is centralized in `src/app/data/resume.ts` with TypeScript types:
+All portfolio content is centralized in `src/app/resume.ts` with TypeScript types:
 - **PersonalInfo**: Contact details and social links
 - **AboutInfo**: Professional summary and specializations
 - **Experience**: Work history with achievements and technologies

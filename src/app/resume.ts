@@ -38,6 +38,7 @@ export type PersonalInfo = {
   name: string;
   title: string;
   email: string;
+  location: string;
   links: {
     portfolio: string;
     resume: string;
@@ -58,6 +59,7 @@ export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
   title: "Software Engineer",
   email: "cornelius@corneliusventi.dev",
+  location: "Indonesia",
   links: {
     portfolio: "https://corneliusventi.dev",
     resume: "https://corneliusventi.dev/resume.pdf",
@@ -202,6 +204,7 @@ export const experiences: Experience[] = [
       "Shopify",
       "Cursor",
       "AI Development",
+      "GitLab",
     ],
   },
   {
@@ -224,6 +227,7 @@ export const experiences: Experience[] = [
       "Invoice Ninja",
       "Xero API",
       "Cursor",
+      "GitLab",
     ],
   },
   {
@@ -245,6 +249,7 @@ export const experiences: Experience[] = [
       "AWS CloudWatch",
       "Microservices",
       "Email Systems",
+      "GitLab",
     ],
   },
   {
@@ -263,6 +268,7 @@ export const experiences: Experience[] = [
       "Laravel",
       "E-commerce",
       "Back Office Systems",
+      "GitLab",
     ],
   },
   {
@@ -282,6 +288,7 @@ export const experiences: Experience[] = [
       "Financial Management",
       "Health Data",
       "Government Systems",
+      "GitLab",
     ],
   },
 ];
@@ -291,60 +298,119 @@ export const skillGroups: SkillGroup[] = [
     category: "Programming Languages",
     skills: [
       "JavaScript",
-      "TypeScript",
+      "TypeScript", 
       "Python",
-      "PHP",
       "Golang",
+      "PHP",
       "HTML",
       "CSS",
-      "Node.js",
     ],
   },
   {
-    category: "Frontend Frameworks",
+    category: "Frontend Development",
     skills: [
       "React.js",
       "Next.js",
       "Vue.js",
       "Nuxt.js",
       "Tailwind CSS",
+      "Material UI",
+      "Vuetify",
       "Bootstrap",
     ],
   },
   {
-    category: "Backend Frameworks",
-    skills: ["Express.js", "Nest.js", "Flask", "Laravel"],
-  },
-  {
-    category: "Databases",
-    skills: ["MySQL", "PostgreSQL", "MongoDB"],
-  },
-  {
-    category: "Cloud & DevOps",
-    skills: ["Docker", "Kubernetes", "AWS CloudWatch", "Redis"],
-  },
-  {
-    category: "APIs & Integrations",
+    category: "Backend Development", 
     skills: [
-      "Google Maps API",
-      "Apollo.io API",
-      "Google Sheets API",
-      "Invoice Ninja API",
-      "Xero API",
-      "Shopify",
+      "Node.js",
+      "Express.js",
+      "Nest.js",
+      "Flask",
+      "Laravel",
+      "API Development",
+      "Microservices",
     ],
   },
   {
-    category: "Payment & Communication",
-    skills: ["Stripe", "SendGrid"],
+    category: "Databases & Caching",
+    skills: [
+      "PostgreSQL",
+      "MySQL", 
+      "MongoDB",
+      "Redis",
+    ],
   },
   {
-    category: "Development Tools",
-    skills: ["Git", "Cursor", "Claude Code", "Figma", "Postman"],
+    category: "Cloud & DevOps",
+    skills: [
+      "Docker",
+      "Kubernetes", 
+      "AWS CloudWatch",
+      "GitLab CI/CD",
+      "Linux",
+      "Shell Scripting",
+    ],
   },
   {
-    category: "Project Management",
-    skills: ["Slack", "Trello", "Jira", "Notion"],
+    category: "Version Control & Collaboration",
+    skills: [
+      "Git",
+      "GitHub", 
+      "GitLab",
+      "Slack",
+      "Jira",
+      "Notion",
+    ],
+  },
+  {
+    category: "Third-party APIs & Services",
+    skills: [
+      "Google Maps API",
+      "Google Sheets API",
+      "Apollo.io API",
+      "Stripe",
+      "Shopify",
+      "SendGrid",
+      "Invoice Ninja API",
+      "Xero API",
+    ],
+  },
+  {
+    category: "Development Tools & AI",
+    skills: [
+      "Cursor",
+      "Claude Code", 
+      "Figma",
+      "Postman",
+      "ESLint",
+      "AI Development",
+    ],
+  },
+  {
+    category: "Domain Expertise",
+    skills: [
+      "E-commerce",
+      "Financial Systems",
+      "Back Office Systems", 
+      "Email Systems",
+      "SEO",
+      "Data Analysis",
+    ],
+  },
+  {
+    category: "Soft Skills & Leadership",
+    skills: [
+      "Remote Work",
+      "Cross-cultural Communication",
+      "Problem Solving",
+      "Project Management",
+      "Team Collaboration",
+      "Client Communication",
+      "Agile Methodologies",
+      "Technical Documentation",
+      "Mentoring",
+      "Requirements Analysis",
+    ],
   },
 ];
 

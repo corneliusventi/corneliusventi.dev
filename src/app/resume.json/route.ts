@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 import {
   personalInfo,
   aboutInfo,
@@ -7,7 +7,7 @@ import {
   skillGroups,
   educations,
   certificates,
-} from '../../data/resume';
+} from "../resume";
 
 export async function GET() {
   const resumeData = {

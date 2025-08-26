@@ -10,7 +10,7 @@ import {
   skillGroups,
   educations,
   certificates,
-} from "./data/resume";
+} from "./resume";
 
 export default function Home() {
   return (

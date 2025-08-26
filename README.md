@@ -10,6 +10,7 @@ A modern, responsive portfolio website showcasing my professional experience, pr
 - **Modern Tech Stack** - Next.js 15, React 19, TypeScript, Tailwind CSS v4
 - **Interactive Components** - Mobile navigation, status badge, hover effects
 - **Comprehensive Sections** - Experience, Skills, Projects, Certificates, Education
+- **Auto-Generated PDF Resume** - Dynamic PDF generation using same data source
 - **API Integration** - RESTful endpoint serving portfolio data
 - **SEO Optimized** - Comprehensive sitemap with section anchors
 - **AI-Assisted Development** - Built using Claude Code and Cursor
@@ -35,13 +36,14 @@ A modern, responsive portfolio website showcasing my professional experience, pr
 src/app/
 ├── layout.tsx                    # Root layout with header/footer
 ├── page.tsx                     # Main portfolio page
+├── resume.ts                   # Centralized portfolio data
 ├── globals.css                  # Tailwind CSS with custom variables
 ├── components/
 │   └── MobileNav.tsx            # Responsive navigation
-├── data/
-│   └── resume.ts               # Centralized portfolio data
-└── api/
-    └── resume/route.ts         # Portfolio data API endpoint
+├── resume.json/
+│   └── route.ts                # Portfolio data JSON endpoint
+└── resume.pdf/
+    └── route.tsx               # Auto-generated PDF resume
 ```
 
 ## 📊 Portfolio Sections
@@ -93,7 +95,8 @@ src/app/
 
 ## 🌐 API Endpoints
 
-- `GET /api/resume` - Returns complete portfolio data in JSON format
+- `GET /resume.json` - Returns complete portfolio data in JSON format
+- `GET /resume.pdf` - Auto-generated PDF resume using React-PDF
 
 ## 📱 Responsive Features
 
