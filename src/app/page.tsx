@@ -60,18 +60,18 @@ export default function Home() {
 
               {/* Enhanced badge groups with better organization */}
               <div className="space-y-4">
-                {aboutInfo.specializations.map((group, groupIndex) => (
-                  <div key={groupIndex} className="flex flex-wrap gap-3">
-                    {group.map((specialization, specIndex) => (
+                <div className="flex flex-wrap gap-3">
+                  {aboutInfo.specializations.map(
+                    (specialization, specIndex) => (
                       <span
                         key={specIndex}
-                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-base"
+                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-sm"
                       >
                         {specialization}
                       </span>
-                    ))}
-                  </div>
-                ))}
+                    ),
+                  )}
+                </div>
               </div>
 
               {/* CTA Buttons */}
@@ -219,7 +219,7 @@ export default function Home() {
                       {exp.technologies.map((tech, i) => (
                         <span
                           key={i}
-                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
+                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
                         >
                           {tech}
                         </span>
@@ -273,7 +273,7 @@ export default function Home() {
                     {skillGroup.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
+                        className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
                       >
                         {skill}
                       </span>
@@ -332,7 +332,7 @@ export default function Home() {
                     {project.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-3 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-sm"
+                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-sm"
                       >
                         {tech}
                       </span>
@@ -393,7 +393,7 @@ export default function Home() {
                       {edu.technologies.map((tech, i) => (
                         <span
                           key={i}
-                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
+                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
                         >
                           {tech}
                         </span>

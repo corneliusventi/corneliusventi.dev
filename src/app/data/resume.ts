@@ -43,7 +43,7 @@ export type PersonalInfo = {
 export type AboutInfo = {
   yearsOfExperience: string;
   description: string[];
-  specializations: string[][];
+  specializations: string[];
 };
 
 export const personalInfo: PersonalInfo = {
@@ -67,8 +67,13 @@ export const aboutInfo: AboutInfo = {
     "Currently specializing in AI-assisted development and automation, building sophisticated lead generation systems using modern APIs and cloud technologies. Expert in end-to-end development from backend data pipelines to customer-facing storefronts, with a proven track record of delivering complex projects from concept to production.",
   ],
   specializations: [
-    ["AI-Powered Development", "Golang", "Python", "React", "Vue.js"],
-    ["Remote Specialist", "Cursor & Claude Code"],
+    "AI-Powered Development",
+    "Golang",
+    "Python",
+    "React",
+    "Vue.js",
+    "Remote Specialist",
+    "Cursor & Claude Code",
   ],
 };
 
