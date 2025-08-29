@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
@@ -15,23 +16,53 @@ export const metadata = {
     "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems across Indonesia and Singapore. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Remote-first professional available for international opportunities.",
   keywords: [
     // Core technical skills
-    "software engineer", "golang developer", "python developer", "react developer", 
-    "typescript", "vue.js", "next.js", "node.js", "API development",
+    "software engineer",
+    "golang developer",
+    "python developer",
+    "react developer",
+    "typescript",
+    "vue.js",
+    "next.js",
+    "node.js",
+    "API development",
     // Specializations
-    "AI development", "AI-assisted development", "machine learning", "automation",
-    "scalable web applications", "data processing systems", "microservices",
+    "AI development",
+    "AI-assisted development",
+    "machine learning",
+    "automation",
+    "scalable web applications",
+    "data processing systems",
+    "microservices",
     // Experience & roles
-    "full stack developer", "backend engineer", "frontend developer", 
-    "6 years experience", "senior developer",
+    "full stack developer",
+    "backend engineer",
+    "frontend developer",
+    "6 years experience",
+    "senior developer",
     // Geographic & work style
-    "remote developer", "indonesia developer", "singapore developer", 
-    "southeast asia", "international remote work", "cross-cultural communication",
+    "remote developer",
+    "indonesia developer",
+    "singapore developer",
+    "southeast asia",
+    "international remote work",
+    "cross-cultural communication",
     // Industries
-    "e-commerce developer", "saas developer", "insurance technology", 
-    "financial systems", "enterprise software",
+    "e-commerce developer",
+    "saas developer",
+    "insurance technology",
+    "financial systems",
+    "enterprise software",
     // Technologies
-    "docker", "kubernetes", "postgresql", "mongodb", "redis", "aws", 
-    "gitlab", "stripe", "shopify", "google maps api"
+    "docker",
+    "kubernetes",
+    "postgresql",
+    "mongodb",
+    "redis",
+    "aws",
+    "gitlab",
+    "stripe",
+    "shopify",
+    "google maps api",
   ].join(", "),
   authors: [{ name: personalInfo.name, url: personalInfo.links.portfolio }],
   creator: personalInfo.name,
@@ -49,9 +80,9 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
@@ -74,14 +105,14 @@ export const metadata = {
         width: 1200,
         height: 1200,
         alt: `${personalInfo.name} - Software Engineer Profile Photo`,
-        type: 'image/jpeg',
+        type: "image/jpeg",
       },
       {
         url: personalInfo.links.profile,
         width: 400,
         height: 400,
         alt: `${personalInfo.name} - Software Engineer Profile Photo`,
-        type: 'image/jpeg',
+        type: "image/jpeg",
       },
     ],
     profile: {
@@ -106,8 +137,8 @@ export const metadata = {
   alternates: {
     canonical: personalInfo.links.portfolio,
     languages: {
-      'en-US': personalInfo.links.portfolio,
-      'id-ID': personalInfo.links.portfolio,
+      "en-US": personalInfo.links.portfolio,
+      "id-ID": personalInfo.links.portfolio,
     },
   },
   category: "technology",
@@ -199,6 +230,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
