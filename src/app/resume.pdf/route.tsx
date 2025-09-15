@@ -13,6 +13,7 @@ import {
   experiences,
   skillGroups,
   educations,
+  languages,
 } from "../resume";
 
 const styles = StyleSheet.create({
@@ -134,6 +135,21 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontStyle: "italic",
   },
+  languageItem: {
+    marginBottom: 4,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  languageName: {
+    fontSize: 10,
+    fontWeight: "bold",
+    color: "#000000",
+    marginRight: 8,
+  },
+  languageLevel: {
+    fontSize: 9,
+    color: "#000000",
+  },
 });
 
 const ResumePDF = () => (
@@ -184,6 +200,17 @@ const ResumePDF = () => (
             <Text style={styles.degree}>{edu.degree}</Text>
             <Text style={styles.institution}>{edu.institution}</Text>
             <Text style={styles.educationPeriod}>{edu.period}</Text>
+          </View>
+        ))}
+      </View>
+
+      {/* Languages Section */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Languages</Text>
+        {languages.map((language, index) => (
+          <View key={index} style={styles.languageItem}>
+            <Text style={styles.languageName}>{language.name}:</Text>
+            <Text style={styles.languageLevel}>{language.level}</Text>
           </View>
         ))}
       </View>

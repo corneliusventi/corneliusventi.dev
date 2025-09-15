@@ -10,6 +10,7 @@ import {
   skillGroups,
   educations,
   certificates,
+  languages,
 } from "./resume";
 
 export default function Home() {
@@ -284,6 +285,53 @@ export default function Home() {
                         {skill}
                       </span>
                     ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="relative flex items-center justify-center py-8">
+          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
+          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
+        </div>
+      </div>
+
+      {/* Languages Section */}
+      <section id="languages" className="relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 -z-10">
+          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
+          <div className="absolute top-0 left-0 h-full w-full opacity-7">
+            <div className="border-brand-accent absolute top-20 left-20 h-24 w-24 rotate-30 transform border-2 opacity-60"></div>
+            <div className="border-brand-light absolute bottom-16 right-16 h-20 w-20 -rotate-45 transform border-2"></div>
+          </div>
+        </div>
+        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
+          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
+            <div className="relative">
+              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
+              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+                Languages
+              </h2>
+            </div>
+            <div className="space-y-6 text-base md:space-y-8 xl:text-lg">
+              {languages.map((language, index) => (
+                <div
+                  key={index}
+                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
+                >
+                  <div className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
+                    {language.name}
+                  </div>
+                  <div className="text-base opacity-90 md:text-lg xl:text-xl">
+                    <span className="text-brand-accent font-semibold">
+                      {language.level}
+                    </span>
                   </div>
                 </div>
               ))}

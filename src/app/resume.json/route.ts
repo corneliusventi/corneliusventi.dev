@@ -7,6 +7,7 @@ import {
   skillGroups,
   educations,
   certificates,
+  languages,
 } from "../resume";
 
 export async function GET() {
@@ -16,6 +17,7 @@ export async function GET() {
     projects,
     experiences,
     skills: skillGroups,
+    languages,
     certificates,
     education: educations,
   };

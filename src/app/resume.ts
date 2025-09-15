@@ -56,6 +56,11 @@ export type AboutInfo = {
   specializations: string[];
 };
 
+export type Language = {
+  name: string;
+  level: string;
+};
+
 export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
   title: "Software Engineer",
@@ -473,6 +478,17 @@ export const certificates: Certificate[] = [
       "Trees",
       "Graphs",
     ],
+  },
+];
+
+export const languages: Language[] = [
+  {
+    name: "English",
+    level: "Professional Working Proficiency",
+  },
+  {
+    name: "Indonesian",
+    level: "Native or Bilingual Proficiency",
   },
 ];
 
