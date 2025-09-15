@@ -45,7 +45,7 @@ export default function Home() {
             {/* Status Badge */}
             <span className="bg-brand-light bg-opacity-20 text-brand-dark border-brand-light border-opacity-50 hover:bg-opacity-30 hover:border-opacity-70 mb-10 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:mb-12 xl:mb-0">
               <div className="bg-brand-dark h-2 w-2 animate-pulse rounded-full"></div>
-              Open to Opportunities
+              Open to Global Opportunities
             </span>
           </div>
 
@@ -62,7 +62,7 @@ export default function Home() {
 
             <div className="w-full max-w-4xl space-y-6">
               <p className="text-xl leading-relaxed opacity-90 xl:text-2xl xl:leading-relaxed">
-                {personalInfo.title} specializing in
+                6+ Years | Full Stack Development | Global Remote
               </p>
 
               {/* Enhanced badge groups with better organization */}
@@ -308,7 +308,7 @@ export default function Home() {
           <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
           <div className="absolute top-0 left-0 h-full w-full opacity-7">
             <div className="border-brand-accent absolute top-20 left-20 h-24 w-24 rotate-30 transform border-2 opacity-60"></div>
-            <div className="border-brand-light absolute bottom-16 right-16 h-20 w-20 -rotate-45 transform border-2"></div>
+            <div className="border-brand-light absolute right-16 bottom-16 h-20 w-20 -rotate-45 transform border-2"></div>
           </div>
         </div>
         <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
@@ -427,7 +427,10 @@ export default function Home() {
             </div>
             <div className="space-y-6 text-base md:space-y-8 xl:text-lg">
               {certificates.map((certificate, index) => (
-                <div key={index} className="border-brand-accent border-l-4 pl-6 md:pl-8">
+                <div
+                  key={index}
+                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
+                >
                   <Link
                     href={certificate.href}
                     target="_blank"

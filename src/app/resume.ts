@@ -64,9 +64,10 @@ export type Language = {
 export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
   title: "Software Engineer",
-  headline: "Software Engineer | 6+ Years Building Scalable APIs & Web Applications | AI-Assisted Development Specialist",
+  headline:
+    "Software Engineer | 6+ Years | Full Stack Development | Global Remote",
   email: "cornelius@corneliusventi.dev",
-  location: "Indonesia",
+  location: "Global",
   links: {
     portfolio: "https://corneliusventi.dev",
     resume: "https://corneliusventi.dev/resume.pdf",
@@ -82,6 +83,7 @@ export const aboutInfo: AboutInfo = {
   description: [
     "Software Engineer with 6+ years of experience building scalable web applications, APIs, and data processing systems across diverse industries including e-commerce, insurance, and SaaS platforms.",
     "Currently specializing in AI-assisted development and automation, building sophisticated lead generation systems using modern APIs and cloud technologies. Expert in end-to-end development from backend data pipelines to customer-facing storefronts, with a proven track record of delivering complex projects from concept to production.",
+    "Flexible remote work specialist with global timezone adaptability and async collaboration expertise. Available for work across America, Europe, Asia, and Australia timezones with flexible scheduling. Expert in asynchronous remote work methodologies with strong documentation and communication practices for seamless international collaboration.",
   ],
   specializations: [
     "AI-Powered Development",
@@ -90,6 +92,8 @@ export const aboutInfo: AboutInfo = {
     "React",
     "Vue.js",
     "Remote Specialist",
+    "Global Timezone Flexibility",
+    "Async Remote Work",
     "Cursor & Claude Code",
   ],
 };
@@ -305,7 +309,7 @@ export const skillGroups: SkillGroup[] = [
     category: "Programming Languages",
     skills: [
       "JavaScript",
-      "TypeScript", 
+      "TypeScript",
       "Python",
       "Golang",
       "PHP",
@@ -327,7 +331,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    category: "Backend Development", 
+    category: "Backend Development",
     skills: [
       "Node.js",
       "Express.js",
@@ -340,18 +344,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Databases & Caching",
-    skills: [
-      "PostgreSQL",
-      "MySQL", 
-      "MongoDB",
-      "Redis",
-    ],
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
   },
   {
     category: "Cloud & DevOps",
     skills: [
       "Docker",
-      "Kubernetes", 
+      "Kubernetes",
       "AWS CloudWatch",
       "GitLab CI/CD",
       "Linux",
@@ -360,14 +359,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Version Control & Collaboration",
-    skills: [
-      "Git",
-      "GitHub", 
-      "GitLab",
-      "Slack",
-      "Jira",
-      "Notion",
-    ],
+    skills: ["Git", "GitHub", "GitLab", "Slack", "Jira", "Notion"],
   },
   {
     category: "Third-party APIs & Services",
@@ -386,7 +378,7 @@ export const skillGroups: SkillGroup[] = [
     category: "Development Tools & AI",
     skills: [
       "Cursor",
-      "Claude Code", 
+      "Claude Code",
       "Figma",
       "Postman",
       "ESLint",
@@ -398,7 +390,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "E-commerce",
       "Financial Systems",
-      "Back Office Systems", 
+      "Back Office Systems",
       "Email Systems",
       "SEO",
       "Data Analysis",
@@ -408,6 +400,8 @@ export const skillGroups: SkillGroup[] = [
     category: "Soft Skills & Professional",
     skills: [
       "Remote Work",
+      "Async Remote Collaboration",
+      "Global Timezone Coverage",
       "Cross-cultural Communication",
       "Problem Solving",
       "Project Management",

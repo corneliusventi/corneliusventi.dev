@@ -166,7 +166,11 @@ const ResumePDF = () => (
           {personalInfo.links.portfolio}
         </Text>
         <Text style={styles.title}>{personalInfo.title}</Text>
-        <Text style={styles.summary}>{aboutInfo.description.join(" ")}</Text>
+        {aboutInfo.description.map((paragraph, index) => (
+          <Text key={index} style={[styles.summary, { marginBottom: index < aboutInfo.description.length - 1 ? 6 : 0 }]}>
+            {paragraph}
+          </Text>
+        ))}
       </View>
 
       {/* Experience Section */}

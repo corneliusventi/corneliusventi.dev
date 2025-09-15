@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: `${personalInfo.name} | ${personalInfo.headline}`,
   description:
-    "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems across Indonesia and Singapore. Specializing in AI-assisted development with Golang, Python, React, and modern cloud technologies. Remote-first professional available for international opportunities.",
+    "Global Remote Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Full-stack developer specializing in Golang, Python, React, and modern cloud technologies. Available for work across America, Europe, Asia, and Australia timezones with async collaboration expertise.",
   keywords: [
     // Core technical skills
     "software engineer",
@@ -40,12 +40,15 @@ export const metadata = {
     "6 years experience",
     "senior developer",
     // Geographic & work style
-    "remote developer",
-    "indonesia developer",
-    "singapore developer",
-    "southeast asia",
+    "global remote developer",
     "international remote work",
+    "america timezone",
+    "europe timezone",
+    "asia timezone",
+    "australia timezone",
+    "async collaboration",
     "cross-cultural communication",
+    "flexible scheduling",
     // Industries
     "e-commerce developer",
     "saas developer",
@@ -97,7 +100,7 @@ export const metadata = {
     url: personalInfo.links.portfolio,
     title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
-      "Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems across Indonesia and Singapore. Specializing in AI-assisted development with modern technologies.",
+      "Global Remote Software Engineer with 6+ years experience in full-stack development. Available for work across America, Europe, Asia, and Australia timezones with expertise in Golang, Python, React, and async collaboration.",
     siteName: "corneliusventi.dev",
     images: [
       {
@@ -128,7 +131,7 @@ export const metadata = {
     creator: "@corneliusventi",
     title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
-      "6+ years experience in Golang, Python, React. AI-assisted development specialist. Remote-first professional across Indonesia & Singapore.",
+      "6+ years in full-stack development with Golang, Python, React. Global remote specialist available across America, Europe, Asia & Australia timezones.",
     images: {
       url: personalInfo.links.profile,
       alt: `${personalInfo.name} - Software Engineer Profile Photo`,
