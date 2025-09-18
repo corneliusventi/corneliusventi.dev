@@ -100,6 +100,22 @@ export const aboutInfo: AboutInfo = {
 
 export const projects: Project[] = [
   {
+    name: "jobsh",
+    description:
+      "A Go TUI application that aggregates job postings from multiple APIs (RemoteOK, WeWorkRemotely, Himalayas, Remotive, Arbeitnow) with background processing, local SQLite storage, advanced filtering, and interactive terminal interface. Features real-time progress tracking, smart deduplication, and job management with status tracking.",
+    href: "https://github.com/corneliusventi/jobsh",
+    tech: [
+      "Golang",
+      "SQLite",
+      "TUI",
+      "Bubble Tea",
+      "RSS Parsing",
+      "JSON APIs",
+      "Background Processing",
+      "Rate Limiting",
+    ],
+  },
+  {
     name: "SiftlyAPI",
     description:
       "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
