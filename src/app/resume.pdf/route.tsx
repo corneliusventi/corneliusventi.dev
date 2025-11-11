@@ -37,8 +37,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000000",
     marginBottom: 10,
+    textDecoration: "underline",
   },
-  location: {
+  email: {
+    fontSize: 10,
+    color: "#ff0000",
+    marginBottom: 8,
+  },
+  links: {
     fontSize: 10,
     color: "#000000",
     marginBottom: 8,
@@ -158,16 +164,25 @@ const ResumePDF = () => (
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.name}>{personalInfo.name}</Text>
-        <Text style={styles.location}>
-          {personalInfo.location}
+        <Text style={styles.email}>{personalInfo.email}</Text>
+        <Text style={styles.links}>
+          {personalInfo.links.portfolio}
           {" • "}
           {personalInfo.links.linkedin}
           {" • "}
-          {personalInfo.links.portfolio}
+          {personalInfo.links.github}
         </Text>
         <Text style={styles.title}>{personalInfo.title}</Text>
         {aboutInfo.description.map((paragraph, index) => (
-          <Text key={index} style={[styles.summary, { marginBottom: index < aboutInfo.description.length - 1 ? 6 : 0 }]}>
+          <Text
+            key={index}
+            style={[
+              styles.summary,
+              {
+                marginBottom: index < aboutInfo.description.length - 1 ? 6 : 0,
+              },
+            ]}
+          >
             {paragraph}
           </Text>
         ))}
