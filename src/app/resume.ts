@@ -214,7 +214,7 @@ export const experiences: Experience[] = [
   {
     company: "Icebaths",
     position: "Software Engineer",
-    period: "2025 - Present",
+    period: "2025 - 2025",
     location: "Indonesia (Remote)",
     achievements: [
       "Architected comprehensive lead generation system leveraging Google Maps Places API and Apollo.io integration using Golang",
