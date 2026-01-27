@@ -160,11 +160,11 @@ export default function Home() {
                 <p key={index} className="leading-relaxed xl:leading-relaxed">
                   {index === 0 ? (
                     <>
-                      Software Engineer with{" "}
+                      Full Stack Engineer with{" "}
                       <span className="text-brand-accent font-semibold">
                         {aboutInfo.yearsOfExperience}
                       </span>{" "}
-                      {paragraph.replace("Software Engineer with 6+ years", "")}
+                      {paragraph.replace("Full Stack Engineer with 6+ years", "")}
                     </>
                   ) : (
                     paragraph

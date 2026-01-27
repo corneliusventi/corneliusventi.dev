@@ -6,6 +6,7 @@ import {
   View,
   StyleSheet,
   pdf,
+  Link,
 } from "@react-pdf/renderer";
 import {
   personalInfo,
@@ -14,6 +15,7 @@ import {
   skillGroups,
   educations,
   languages,
+  projects,
 } from "../resume";
 
 const styles = StyleSheet.create({
@@ -110,7 +112,9 @@ const styles = StyleSheet.create({
     lineHeight: 1.3,
   },
   skillCategory: {
-    marginBottom: 4,
+    marginBottom: 6,
+    width: "50%",
+    paddingRight: 10,
   },
   skillCategoryTitle: {
     fontSize: 9,
@@ -159,19 +163,40 @@ const styles = StyleSheet.create({
 });
 
 const ResumePDF = () => (
-  <Document>
+  <Document
+    title={`${personalInfo.name} - ${personalInfo.title}`}
+    author={personalInfo.name}
+    subject={`Resume of ${personalInfo.name} - ${personalInfo.title}`}
+    keywords={aboutInfo.specializations.join(", ")}
+    language="en"
+  >
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.name}>{personalInfo.name}</Text>
         <Text style={styles.email}>{personalInfo.email}</Text>
-        <Text style={styles.links}>
-          {personalInfo.links.portfolio}
-          {" • "}
-          {personalInfo.links.linkedin}
-          {" • "}
-          {personalInfo.links.github}
-        </Text>
+        <View style={{ flexDirection: "row", marginBottom: 8 }}>
+          <Link
+            src={personalInfo.links.portfolio}
+            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
+          >
+            {personalInfo.links.portfolio.replace(/^https?:\/\//, "")}
+          </Link>
+          <Text style={{ fontSize: 10, marginHorizontal: 4 }}> • </Text>
+          <Link
+            src={personalInfo.links.linkedin}
+            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
+          >
+            {personalInfo.links.linkedin.replace(/^https?:\/\//, "")}
+          </Link>
+          <Text style={{ fontSize: 10, marginHorizontal: 4 }}> • </Text>
+          <Link
+            src={personalInfo.links.github}
+            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
+          >
+            {personalInfo.links.github.replace(/^https?:\/\//, "")}
+          </Link>
+        </View>
         <Text style={styles.title}>{personalInfo.title}</Text>
         {aboutInfo.description.map((paragraph, index) => (
           <Text
@@ -207,6 +232,37 @@ const ResumePDF = () => (
                 • {achievement}
               </Text>
             ))}
+            {exp.technologies && (
+              <Text style={[styles.achievement, { fontStyle: "italic", marginTop: 2 }]}>
+                Stack: {exp.technologies.join(", ")}
+              </Text>
+            )}
+          </View>
+        ))}
+      </View>
+
+      {/* Projects Section */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Key Projects</Text>
+        {projects.slice(0, 4).map((project, index) => (
+          <View key={index} style={styles.experienceContainer} break={index > 0 ? false : undefined}>
+            <Link
+              src={project.href}
+              style={{ textDecoration: "none" }}
+            >
+              <Text style={styles.companyName}>
+                {project.name}
+              </Text>
+            </Link>
+            <Text style={styles.achievement}>{project.description}</Text>
+            <Text
+              style={[
+                styles.achievement,
+                { fontStyle: "italic", marginTop: 2 },
+              ]}
+            >
+              Stack: {project.tech.join(", ")}
+            </Text>
           </View>
         ))}
       </View>
@@ -237,14 +293,16 @@ const ResumePDF = () => (
       {/* Skills Section */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Skills</Text>
-        {skillGroups.map((group, index) => (
-          <View key={index} style={styles.skillCategory}>
-            <Text style={styles.skillCategoryTitle}>
-              <Text style={{ fontWeight: "bold" }}>{group.category}:</Text>{" "}
-              {group.skills.join(", ")}
-            </Text>
-          </View>
-        ))}
+        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          {skillGroups.map((group, index) => (
+            <View key={index} style={styles.skillCategory}>
+              <Text style={styles.skillCategoryTitle}>
+                <Text style={{ fontWeight: "bold" }}>{group.category}:</Text>{" "}
+                {group.skills.join(", ")}
+              </Text>
+            </View>
+          ))}
+        </View>
       </View>
     </Page>
   </Document>

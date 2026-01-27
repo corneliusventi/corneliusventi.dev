@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: `${personalInfo.name} | ${personalInfo.headline}`,
   description:
-    "Global Remote Software Engineer with 6+ years experience building scalable web applications, APIs, and data processing systems. Full-stack developer specializing in Golang, Python, React, and modern cloud technologies. Available for work across America, Europe, Asia, and Australia timezones with async collaboration expertise.",
+    "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in Golang, Python, React, and Next.js with deep expertise in scalable system design and AI-integrated workflows.",
   keywords: [
     // Core technical skills
     "software engineer",
@@ -34,7 +34,7 @@ export const metadata = {
     "data processing systems",
     "microservices",
     // Experience & roles
-    "full stack developer",
+    "full stack engineer",
     "backend engineer",
     "frontend developer",
     "6 years experience",
@@ -100,21 +100,21 @@ export const metadata = {
     url: personalInfo.links.portfolio,
     title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
-      "Global Remote Software Engineer with 6+ years experience in full-stack development. Available for work across America, Europe, Asia, and Australia timezones with expertise in Golang, Python, React, and async collaboration.",
+      "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in scalable system design and AI-integrated workflows.",
     siteName: "corneliusventi.dev",
     images: [
       {
         url: personalInfo.links.profile,
         width: 1200,
         height: 1200,
-        alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+        alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
         type: "image/jpeg",
       },
       {
         url: personalInfo.links.profile,
         width: 400,
         height: 400,
-        alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+        alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
         type: "image/jpeg",
       },
     ],
@@ -131,10 +131,10 @@ export const metadata = {
     creator: "@corneliusventi",
     title: `${personalInfo.name} | ${personalInfo.headline}`,
     description:
-      "6+ years in full-stack development with Golang, Python, React. Global remote specialist available across America, Europe, Asia & Australia timezones.",
+      "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms. Specialized in Golang, Python, React, and AI-integrated automation.",
     images: {
       url: personalInfo.links.profile,
-      alt: `${personalInfo.name} - Software Engineer Profile Photo`,
+      alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
     },
   },
   alternates: {
@@ -145,7 +145,7 @@ export const metadata = {
     },
   },
   category: "technology",
-  classification: "Software Engineering Portfolio",
+  classification: "Full Stack Engineering Portfolio",
   referrer: "origin-when-cross-origin",
   colorScheme: "dark light",
   themeColor: [

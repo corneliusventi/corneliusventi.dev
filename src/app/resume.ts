@@ -63,9 +63,9 @@ export type Language = {
 
 export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
-  title: "Software Engineer",
+  title: "Full Stack Engineer",
   headline:
-    "Software Engineer | 6+ Years | Full Stack Development | Global Remote",
+    "Full Stack Engineer | 6+ Years | Full Stack Development | Global Remote",
   email: "cornelius@corneliusventi.dev",
   location: "Global",
   links: {
@@ -81,9 +81,7 @@ export const personalInfo: PersonalInfo = {
 export const aboutInfo: AboutInfo = {
   yearsOfExperience: "6+ years",
   description: [
-    "Software Engineer with 6+ years of experience building scalable web applications, APIs, and data processing systems across diverse industries including e-commerce, insurance, and SaaS platforms.",
-    "Currently specializing in AI-assisted development and automation, building sophisticated lead generation systems using modern APIs and cloud technologies. Expert in end-to-end development from backend data pipelines to customer-facing storefronts, with a proven track record of delivering complex projects from concept to production.",
-    "Flexible remote work specialist with global timezone adaptability and async collaboration expertise. Available for work across America, Europe, Asia, and Australia timezones with flexible scheduling. Expert in asynchronous remote work methodologies with strong documentation and communication practices for seamless international collaboration.",
+    "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in transforming complex business requirements into scalable reality—from building local e-commerce architectures to engineering fraud-detection pipelines. Expert in creating seamless user experiences using Next.js while maintaining robust concurrent backends in Golang. A proactive remote collaborator and technical lead who prioritizes rapid delivery without compromising on system integrity or documentation.",
   ],
   specializations: [
     "AI-Powered Development",
@@ -213,8 +211,8 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     company: "Icebaths",
-    position: "Software Engineer",
-    period: "2025 - 2025",
+    position: "Full Stack Engineer",
+    period: "Jul 2025 - Sep 2025",
     location: "Indonesia (Remote)",
     achievements: [
       "Architected comprehensive lead generation system leveraging Google Maps Places API and Apollo.io integration using Golang",
@@ -236,8 +234,8 @@ export const experiences: Experience[] = [
   },
   {
     company: "Nubela",
-    position: "Software Engineer",
-    period: "2023 - 2025",
+    position: "Full Stack Engineer",
+    period: "Jul 2023 - Jan 2025",
     location: "Singapore (Remote)",
     achievements: [
       "Spearheaded end-to-end development of enterprise Teams feature with sophisticated user management systems",
@@ -259,8 +257,8 @@ export const experiences: Experience[] = [
   },
   {
     company: "FWD Insurance",
-    position: "Full Stack Developer",
-    period: "2020 - 2022",
+    position: "Full Stack Engineer",
+    period: "Oct 2020 - Aug 2022",
     location: "Singapore (Remote)",
     achievements: [
       "Developed high-conversion Lead Generation Form using Vue.js and Nest.js, delivered in 3 months",
@@ -281,8 +279,8 @@ export const experiences: Experience[] = [
   },
   {
     company: "Satumarket",
-    position: "Staff Development",
-    period: "2020 - 2020",
+    position: "Full Stack Engineer",
+    period: "Feb 2020 - Sep 2020",
     location: "Indonesia",
     achievements: [
       "Architected comprehensive local e-commerce platform using Nuxt.js, Vuetify, Vuex, and Laravel in 3 months",
@@ -301,7 +299,7 @@ export const experiences: Experience[] = [
   {
     company: "Orange Multimedia",
     position: "Web Developer",
-    period: "2018 - 2020",
+    period: "Feb 2018 - Feb 2020",
     location: "Indonesia",
     achievements: [
       "Developed Electronic Signature-based Letter System reducing processing time by 70%",
