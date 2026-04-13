@@ -1,72 +1,25 @@
 import { Analytics } from "@vercel/analytics/next";
-import { Geist_Mono } from "next/font/google";
+import { DM_Sans, Space_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { MobileNav } from "./components/MobileNav";
 import { personalInfo } from "./resume";
+import { ThemeToggle } from "./components/ThemeToggle";
 
-const geistMono = Geist_Mono({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-dm-sans",
+});
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-space-mono",
 });
 
 export const metadata = {
-  title: `${personalInfo.name} | ${personalInfo.headline}`,
+  title: "Cornelius Venti — Senior Full Stack Engineer",
   description:
-    "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in Golang, Python, React, and Next.js with deep expertise in scalable system design and AI-integrated workflows.",
-  keywords: [
-    // Core technical skills
-    "software engineer",
-    "golang developer",
-    "python developer",
-    "react developer",
-    "typescript",
-    "vue.js",
-    "next.js",
-    "node.js",
-    "API development",
-    // Specializations
-    "AI development",
-    "AI-assisted development",
-    "machine learning",
-    "automation",
-    "scalable web applications",
-    "data processing systems",
-    "microservices",
-    // Experience & roles
-    "full stack engineer",
-    "backend engineer",
-    "frontend developer",
-    "6 years experience",
-    "senior developer",
-    // Geographic & work style
-    "global remote developer",
-    "international remote work",
-    "america timezone",
-    "europe timezone",
-    "asia timezone",
-    "australia timezone",
-    "async collaboration",
-    "cross-cultural communication",
-    "flexible scheduling",
-    // Industries
-    "e-commerce developer",
-    "saas developer",
-    "insurance technology",
-    "financial systems",
-    "enterprise software",
-    // Technologies
-    "docker",
-    "kubernetes",
-    "postgresql",
-    "mongodb",
-    "redis",
-    "aws",
-    "gitlab",
-    "stripe",
-    "shopify",
-    "google maps api",
-  ].join(", "),
+    "Senior Full Stack Engineer with 6+ years of experience architecting distributed Go services, high-concurrency Python backends, and performant React 19 interfaces. Specialist in asynchronous ETL pipelines and AI-driven development.",
   authors: [{ name: personalInfo.name, url: personalInfo.links.portfolio }],
   creator: personalInfo.name,
   publisher: personalInfo.name,
@@ -78,79 +31,31 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
-    yandex: process.env.YANDEX_VERIFICATION,
-    yahoo: process.env.YAHOO_VERIFICATION,
   },
   openGraph: {
     type: "profile",
     locale: "en_US",
-    alternateLocale: ["id_ID"],
     url: personalInfo.links.portfolio,
-    title: `${personalInfo.name} | ${personalInfo.headline}`,
+    title: "Cornelius Venti — Senior Full Stack Engineer",
     description:
-      "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in scalable system design and AI-integrated workflows.",
+      "Senior Full Stack Engineer with 6+ years of experience architecting distributed Go services, high-concurrency Python backends, and performant React 19 interfaces. Specialist in asynchronous ETL pipelines and AI-driven development.",
     siteName: "corneliusventi.dev",
-    images: [
-      {
-        url: personalInfo.links.profile,
-        width: 1200,
-        height: 1200,
-        alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
-        type: "image/jpeg",
-      },
-      {
-        url: personalInfo.links.profile,
-        width: 400,
-        height: 400,
-        alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
-        type: "image/jpeg",
-      },
-    ],
-    profile: {
-      firstName: "Cornelius",
-      lastName: "Venti",
-      username: "corneliusventi",
-      gender: "male",
-    },
   },
   twitter: {
     card: "summary",
-    site: "@corneliusventi",
-    creator: "@corneliusventi",
-    title: `${personalInfo.name} | ${personalInfo.headline}`,
+    title: "Cornelius Venti — Senior Full Stack Engineer",
     description:
-      "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms. Specialized in Golang, Python, React, and AI-integrated automation.",
-    images: {
-      url: personalInfo.links.profile,
-      alt: `${personalInfo.name} - Full Stack Engineer Profile Photo`,
-    },
+      "Senior Full Stack Engineer with 6+ years of experience architecting distributed Go services, high-concurrency Python backends, and performant React 19 interfaces. Specialist in asynchronous ETL pipelines and AI-driven development.",
   },
   alternates: {
     canonical: personalInfo.links.portfolio,
-    languages: {
-      "en-US": personalInfo.links.portfolio,
-      "id-ID": personalInfo.links.portfolio,
-    },
   },
-  category: "technology",
-  classification: "Full Stack Engineering Portfolio",
-  referrer: "origin-when-cross-origin",
-  colorScheme: "dark light",
+};
+
+export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5e6ca" },
-    { media: "(prefers-color-scheme: dark)", color: "#343f56" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
   ],
 };
 
@@ -160,29 +65,59 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geistMono.variable}>
-      <body className="bg-brand-dark text-brand-light min-h-screen w-screen font-mono antialiased">
-        <header className="absolute inset-x-0 top-0 z-50">
-          <div className="container mx-auto flex items-center justify-between p-4 sm:p-6 xl:p-8">
-            <Link href="/" className="">
-              <div className="relative">
-                <div className="from-brand-accent absolute -inset-1 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-                <h1 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-xl font-bold sm:text-2xl">
-                  <span className="text-brand-accent">Cornel</span>ius Venti
-                </h1>
-              </div>
+    <html lang="en" className={`${dmSans.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && supportDarkMode)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-white dark:bg-[#09090b] text-zinc-950 dark:text-zinc-50 min-h-screen font-sans antialiased transition-colors duration-300 relative selection:bg-zinc-100 dark:selection:bg-zinc-800">
+        <div className="grain pointer-events-none" />
+        <header className="mx-auto max-w-2xl px-6 pt-24 pb-12 flex justify-between items-end">
+          <div className="flex flex-col gap-2">
+            <Link href="/" className="inline-block group">
+              <h1 className="text-3xl font-semibold tracking-tight group-hover:text-zinc-500 transition-colors">
+                {personalInfo.name}
+              </h1>
             </Link>
-            <MobileNav />
+            <div className="flex items-center gap-2 print:hidden">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-pulse-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                Available for remote projects
+              </span>
+            </div>
+          </div>
+          <div className="theme-toggle print:hidden">
+            <ThemeToggle />
           </div>
         </header>
-        {children}
-        <footer>
-          <div className="container mx-auto flex flex-col items-center justify-center p-4 sm:p-6 xl:p-8">
-            <nav className="mb-6">
-              <ul className="flex justify-center gap-4 sm:gap-6 xl:gap-8">
+        <main className="mx-auto max-w-2xl px-6">
+          {children}
+        </main>
+        <footer className="mx-auto max-w-2xl border-t border-zinc-100 dark:border-zinc-900 px-6 py-16 mt-16 print:mt-8 print:py-8">
+          <div className="flex flex-col gap-10">
+            <nav className="print:hidden">
+              <ul className="flex flex-wrap gap-x-10 gap-y-4 text-xs font-bold text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] font-mono">
                 <li>
                   <Link
-                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    className="hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
                     href={personalInfo.links.github}
                     target="_blank"
                   >
@@ -191,7 +126,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    className="hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
                     href={personalInfo.links.linkedin}
                     target="_blank"
                   >
@@ -200,16 +135,16 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    className="hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
                     href={personalInfo.links.twitter}
                     target="_blank"
                   >
-                    X/Twitter
+                    X
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className="hover:text-brand-accent text-sm transition-all duration-300 hover:underline hover:underline-offset-4 sm:text-base"
+                    className="hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
                     href={personalInfo.links.resume}
                     target="_blank"
                   >
@@ -218,18 +153,13 @@ export default function RootLayout({
                 </li>
               </ul>
             </nav>
-
-            {/* Divider */}
-            <div className="border-brand-accent mb-4 w-32 border-t opacity-30"></div>
-
-            <div className="text-center text-xs opacity-60 sm:text-sm">
-              <div className="relative">
-                <div className="from-brand-light absolute -inset-1 bg-gradient-to-r to-transparent opacity-3 blur-sm"></div>
-                <span className="relative">
-                  &copy; {new Date().getFullYear()} {personalInfo.name}. All
-                  rights reserved.
-                </span>
-              </div>
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+                Core Stack: TS / JS / GOLANG / PYTHON / REACT / NEXT.JS / NODE.JS / AWS / DOCKER / REDIS
+              </p>
+              <p className="text-sm text-zinc-400 dark:text-zinc-600 font-mono tracking-tight uppercase">
+                &copy; {new Date().getFullYear()} {personalInfo.name}
+              </p>
             </div>
           </div>
         </footer>

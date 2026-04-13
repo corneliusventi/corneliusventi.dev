@@ -3,19 +3,49 @@
 @theme {
   --color-brand-light: #f5e6ca;
   --color-brand-dark: #343f56;
-  --color-brand-accent: #8b9dc3;
+  --color-brand-accent: #18181b;
 
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-space-mono);
+
+  --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-noise: noise 0.2s infinite;
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes noise {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.1); }
+  }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+/* Explicitly enable class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -26,6 +56,127 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-gray-200, #e4e4e7);
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #09090b;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  /* Custom Selection Color */
+  ::selection {
+    background-color: #f4f4f5; /* zinc-100 */
+    color: #09090b;
+  }
+
+  .dark ::selection {
+    background-color: #18181b; /* zinc-900 */
+    color: #fafafa;
+  }
+
+  /* Soft Dark Mode (#09090b) */
+  .dark body {
+    background-color: #09090b;
+    color: #fafafa;
+  }
+
+  .dark * {
+    border-color: #18181b;
+  }
+
+  /* Grain Texture Overlay */
+  .grain {
+    position: fixed;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+    animation: noise 8s steps(10) infinite;
+  }
+
+  .dark .grain {
+    opacity: 0.07;
+    filter: invert(1);
+  }
+
+  /* Custom Underline Style */
+  .link-underline {
+    text-decoration-line: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #e4e4e7;
+    transition: all 0.2s ease;
+  }
+
+  .dark .link-underline {
+    text-decoration-color: #27272a;
+  }
+
+  .link-underline:hover {
+    text-decoration-color: #09090b;
+    text-underline-offset: 4px;
+  }
+
+  .dark .link-underline:hover {
+    text-decoration-color: #fafafa;
+  }
+
+  /* Haptic Feedback (Mobile) */
+  @media (hover: none) {
+    a:active, button:active {
+      transform: scale(0.98);
+      opacity: 0.8;
+      transition: transform 0.1s ease;
+    }
+  }
+
+  /* Print-to-PDF Optimization */
+  @media print {
+    @page {
+      margin: 2cm;
+    }
+    .grain, .theme-toggle, .get-in-touch-btn {
+      display: none !important;
+    }
+    body {
+      background-color: white !important;
+      color: black !important;
+      font-size: 11pt !important;
+    }
+    header, main, footer {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    header {
+      margin-bottom: 1cm !important;
+    }
+    .animate-reveal {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    footer {
+      border-top: 1px solid #eee !important;
+      margin-top: 1cm !important;
+      padding-top: 0.5cm !important;
+    }
+    a {
+      text-decoration: none !important;
+      color: black !important;
+    }
   }
 }
+
+.reveal-0 { animation-delay: 0ms; }
+.reveal-1 { animation-delay: 100ms; }
+.reveal-2 { animation-delay: 200ms; }
+.reveal-3 { animation-delay: 300ms; }
+.reveal-4 { animation-delay: 400ms; }

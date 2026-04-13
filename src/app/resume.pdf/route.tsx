@@ -10,7 +10,6 @@ import {
 } from "@react-pdf/renderer";
 import {
   personalInfo,
-  aboutInfo,
   experiences,
   skillGroups,
   educations,
@@ -22,287 +21,278 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "#FFFFFF",
-    padding: 40,
+    paddingTop: 40,
+    paddingBottom: 40,
+    paddingHorizontal: 40,
     fontFamily: "Helvetica",
-    fontSize: 10,
-    lineHeight: 1.4,
+    fontSize: 9,
+    lineHeight: 1.3,
+    color: "#09090b",
   },
   header: {
-    marginBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#000000",
-    borderBottomStyle: "solid",
-    paddingBottom: 12,
+    marginBottom: 20,
+    display: "flex",
+    flexDirection: "column",
   },
   name: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 10,
-    textDecoration: "underline",
+    letterSpacing: -0.5,
+    marginBottom: 6,
+    lineHeight: 1.1,
   },
-  email: {
-    fontSize: 10,
-    color: "#ff0000",
-    marginBottom: 8,
+  tagline: {
+    fontSize: 10.5,
+    color: "#52525b",
+    marginBottom: 12,
+    lineHeight: 1.4,
+    maxWidth: "100%",
   },
-  links: {
-    fontSize: 10,
-    color: "#000000",
-    marginBottom: 8,
+  linksContainer: {
+    flexDirection: "row",
+    gap: 15,
+    marginTop: 0,
   },
-  title: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 8,
-  },
-  summary: {
-    fontSize: 9,
-    color: "#000000",
-    textAlign: "justify",
-    lineHeight: 1.3,
+  link: {
+    color: "#09090b",
+    textDecoration: "none",
+    fontSize: 8,
+    fontFamily: "Courier",
   },
   section: {
-    marginTop: 15,
-    marginBottom: 10,
+    marginTop: 20,
   },
   sectionTitle: {
+    fontSize: 8,
+    fontWeight: "bold",
+    color: "#a1a1aa",
+    textTransform: "uppercase",
+    letterSpacing: 1.5,
+    marginBottom: 10,
+    fontFamily: "Courier",
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#f4f4f5",
+    paddingBottom: 4,
+  },
+  itemContainer: {
+    marginBottom: 14,
+  },
+  itemHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    marginBottom: 4,
+    gap: 10,
+  },
+  itemTitle: {
     fontSize: 11,
     fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 8,
-    marginTop: 15,
-    textTransform: "uppercase",
-    borderBottomWidth: 1,
-    borderBottomColor: "#000000",
-    borderBottomStyle: "solid",
-    paddingBottom: 2,
+    lineHeight: 1.3,
+    marginBottom: 2,
   },
-  experienceContainer: {
-    marginBottom: 12,
+  itemMeta: {
+    fontSize: 8,
+    color: "#a1a1aa",
+    fontFamily: "Courier",
+    textAlign: "right",
   },
-  companyHeader: {
-    marginBottom: 4,
-  },
-  companyName: {
+  itemSubtitle: {
     fontSize: 10,
-    fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 1,
-  },
-  position: {
-    fontSize: 10,
-    fontWeight: "bold",
-    color: "#000000",
-    fontStyle: "italic",
-    marginBottom: 1,
-  },
-  period: {
-    fontSize: 9,
-    color: "#000000",
-    fontStyle: "italic",
+    color: "#71717a",
     marginBottom: 3,
   },
   achievement: {
     fontSize: 9,
-    color: "#000000",
+    color: "#52525b",
     marginBottom: 2,
     marginLeft: 8,
     lineHeight: 1.3,
   },
+  techStack: {
+    fontSize: 8,
+    color: "#71717a",
+    fontFamily: "Courier",
+    marginTop: 4,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+  },
   skillCategory: {
     marginBottom: 6,
-    width: "50%",
-    paddingRight: 10,
+    width: "100%",
   },
-  skillCategoryTitle: {
+  skillText: {
     fontSize: 9,
-    color: "#000000",
-    marginBottom: 2,
+    color: "#52525b",
+    lineHeight: 1.4,
   },
-  skillsList: {
-    fontSize: 9,
-    color: "#000000",
-    lineHeight: 1.2,
-  },
-  educationItem: {
-    marginBottom: 6,
-  },
-  degree: {
-    fontSize: 10,
+  skillLabel: {
     fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 1,
+    color: "#09090b",
   },
-  institution: {
-    fontSize: 9,
-    color: "#000000",
-    marginBottom: 1,
-  },
-  educationPeriod: {
-    fontSize: 9,
-    color: "#000000",
-    fontStyle: "italic",
-  },
-  languageItem: {
-    marginBottom: 4,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  languageName: {
-    fontSize: 10,
-    fontWeight: "bold",
-    color: "#000000",
-    marginRight: 8,
-  },
-  languageLevel: {
-    fontSize: 9,
-    color: "#000000",
+  stackLine: {
+    fontSize: 8,
+    color: "#71717a",
+    fontFamily: "Courier",
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
   },
 });
 
 const ResumePDF = () => (
   <Document
-    title={`${personalInfo.name} - ${personalInfo.title}`}
+    title={`${personalInfo.name} - Resume`}
     author={personalInfo.name}
-    subject={`Resume of ${personalInfo.name} - ${personalInfo.title}`}
-    keywords={aboutInfo.specializations.join(", ")}
+    subject="Full Stack Engineer Resume"
     language="en"
   >
+    {/* Page 1: Intro and Experience */}
     <Page size="A4" style={styles.page}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.name}>{personalInfo.name}</Text>
-        <Text style={styles.email}>{personalInfo.email}</Text>
-        <View style={{ flexDirection: "row", marginBottom: 8 }}>
-          <Link
-            src={personalInfo.links.portfolio}
-            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
-          >
-            {personalInfo.links.portfolio.replace(/^https?:\/\//, "")}
+        <Text style={styles.tagline}>
+          Senior Full Stack Engineer with 6+ years of experience architecting distributed Go services, 
+          high-concurrency Python backends, and performant React 19 interfaces. Specialist in asynchronous ETL pipelines and AI-driven development.
+        </Text>
+        <View style={styles.linksContainer}>
+          <Link src={personalInfo.links.portfolio} style={styles.link}>
+            PORTFOLIO
           </Link>
-          <Text style={{ fontSize: 10, marginHorizontal: 4 }}> • </Text>
-          <Link
-            src={personalInfo.links.linkedin}
-            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
-          >
-            {personalInfo.links.linkedin.replace(/^https?:\/\//, "")}
+          <Link src={personalInfo.links.github} style={styles.link}>
+            GITHUB
           </Link>
-          <Text style={{ fontSize: 10, marginHorizontal: 4 }}> • </Text>
-          <Link
-            src={personalInfo.links.github}
-            style={{ color: "#000000", fontSize: 10, textDecoration: "none" }}
-          >
-            {personalInfo.links.github.replace(/^https?:\/\//, "")}
+          <Link src={personalInfo.links.linkedin} style={styles.link}>
+            LINKEDIN
+          </Link>
+          <Link src={`mailto:${personalInfo.email}`} style={styles.link}>
+            {personalInfo.email.toUpperCase()}
           </Link>
         </View>
-        <Text style={styles.title}>{personalInfo.title}</Text>
-        {aboutInfo.description.map((paragraph, index) => (
-          <Text
-            key={index}
-            style={[
-              styles.summary,
-              {
-                marginBottom: index < aboutInfo.description.length - 1 ? 6 : 0,
-              },
-            ]}
-          >
-            {paragraph}
-          </Text>
-        ))}
       </View>
 
-      {/* Experience Section */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Work Experience</Text>
+        <Text style={styles.sectionTitle}>Professional Experience</Text>
         {experiences.map((exp, index) => (
-          <View
-            key={index}
-            style={styles.experienceContainer}
-            break={index > 0 ? false : undefined}
-          >
-            <Text style={styles.companyName}>
-              {exp.company} • {exp.location}
+          <View key={index} style={styles.itemContainer}>
+            <View style={styles.itemHeader}>
+              <Text style={[styles.itemTitle, { flex: 1 }]}>{exp.company}</Text>
+              <Text style={styles.itemMeta}>{exp.period}</Text>
+            </View>
+            <Text style={styles.itemSubtitle}>
+              {exp.position} • {exp.location}
             </Text>
-            <Text style={styles.position}>{exp.position} • Full-time</Text>
-            <Text style={styles.period}>{exp.period}</Text>
-            {exp.achievements.slice(0, 6).map((achievement, i) => (
-              <Text key={i} style={styles.achievement}>
-                • {achievement}
-              </Text>
+            {exp.achievements.map((achievement, i) => (
+              <View key={i} style={{ flexDirection: "row", marginBottom: 3 }}>
+                <Text style={styles.achievement}>• </Text>
+                <Text style={[styles.achievement, { marginLeft: 0, flex: 1 }]}>
+                  {achievement}
+                </Text>
+              </View>
             ))}
             {exp.technologies && (
-              <Text style={[styles.achievement, { fontStyle: "italic", marginTop: 2 }]}>
-                Stack: {exp.technologies.join(", ")}
+              <Text style={styles.techStack}>
+                Tech: {exp.technologies.join(" / ")}
               </Text>
             )}
           </View>
         ))}
       </View>
 
-      {/* Projects Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Key Projects</Text>
-        {projects.slice(0, 4).map((project, index) => (
-          <View key={index} style={styles.experienceContainer} break={index > 0 ? false : undefined}>
-            <Link
-              src={project.href}
-              style={{ textDecoration: "none" }}
-            >
-              <Text style={styles.companyName}>
-                {project.name}
-              </Text>
-            </Link>
-            <Text style={styles.achievement}>{project.description}</Text>
-            <Text
-              style={[
-                styles.achievement,
-                { fontStyle: "italic", marginTop: 2 },
-              ]}
-            >
-              Stack: {project.tech.join(", ")}
-            </Text>
-          </View>
-        ))}
+      <View
+        style={{
+          marginTop: "auto",
+          borderTopWidth: 0.5,
+          borderTopColor: "#f4f4f5",
+          paddingTop: 10,
+        }}
+      >
+        <Text style={styles.stackLine}>
+          Core Stack: TS / JS / GOLANG / PYTHON / REACT / NEXT.JS / NODE.JS /
+          AWS / DOCKER / REDIS
+        </Text>
       </View>
+    </Page>
 
-      {/* Education Section */}
+    {/* Page 2: Skills, Projects, Education, and Certs */}
+    <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Education</Text>
-        {educations.map((edu, index) => (
-          <View key={index} style={styles.educationItem}>
-            <Text style={styles.degree}>{edu.degree}</Text>
-            <Text style={styles.institution}>{edu.institution}</Text>
-            <Text style={styles.educationPeriod}>{edu.period}</Text>
-          </View>
-        ))}
-      </View>
-
-      {/* Languages Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Languages</Text>
-        {languages.map((language, index) => (
-          <View key={index} style={styles.languageItem}>
-            <Text style={styles.languageName}>{language.name}:</Text>
-            <Text style={styles.languageLevel}>{language.level}</Text>
-          </View>
-        ))}
-      </View>
-
-      {/* Skills Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Skills</Text>
-        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+        <Text style={styles.sectionTitle}>Technical Expertise</Text>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10 }}>
           {skillGroups.map((group, index) => (
-            <View key={index} style={styles.skillCategory}>
-              <Text style={styles.skillCategoryTitle}>
-                <Text style={{ fontWeight: "bold" }}>{group.category}:</Text>{" "}
+            <View key={index} style={[styles.skillCategory, { width: "47%" }]}>
+              <Text style={styles.skillText}>
+                <Text style={styles.skillLabel}>
+                  {group.category.toUpperCase()}:
+                </Text>
+                {"\n"}
                 {group.skills.join(", ")}
               </Text>
             </View>
           ))}
         </View>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Selected Engineering Projects</Text>
+        {projects.map((project, index) => (
+          <View key={index} style={styles.itemContainer}>
+            <View style={styles.itemHeader}>
+              <Link
+                src={project.href}
+                style={{ textDecoration: "none", color: "#09090b", flex: 1 }}
+              >
+                <Text style={[styles.itemTitle, { flex: 1 }]}>
+                  {project.name}
+                </Text>
+              </Link>
+              <Text style={styles.itemMeta}>TECHNICAL CASE STUDY</Text>
+            </View>
+            <Text style={styles.achievement}>{project.description}</Text>
+            <Text style={styles.techStack}>
+              Stack: {project.tech.join(" / ")}
+            </Text>
+          </View>
+        ))}
+      </View>
+
+      <View style={{ flexDirection: "row", gap: 40 }}>
+        <View style={[styles.section, { flex: 1 }]}>
+          <Text style={styles.sectionTitle}>Education</Text>
+          {educations.map((edu, index) => (
+            <View key={index}>
+              <Text style={styles.itemTitle}>{edu.institution}</Text>
+              <Text style={styles.itemSubtitle}>
+                {edu.degree} • {edu.period}
+              </Text>
+            </View>
+          ))}
+        </View>
+
+        <View style={[styles.section, { flex: 1 }]}>
+          <Text style={styles.sectionTitle}>Languages</Text>
+          {languages.map((lang, index) => (
+            <View key={index} style={{ marginBottom: 4 }}>
+              <Text style={styles.skillText}>
+                <Text style={styles.skillLabel}>{lang.name}:</Text> {lang.level}
+              </Text>
+            </View>
+          ))}
+        </View>
+      </View>
+
+      <View
+        style={{
+          marginTop: "auto",
+          borderTopWidth: 0.5,
+          borderTopColor: "#f4f4f5",
+          paddingTop: 15,
+        }}
+      >
+        <Text
+          style={[styles.itemMeta, { textAlign: "center", color: "#d4d4d8" }]}
+        >
+          © {new Date().getFullYear()} {personalInfo.name.toUpperCase()} •
+          SENIOR FULL STACK ENGINEER • TYPESET IN HELVETICA & COURIER
+        </Text>
       </View>
     </Page>
   </Document>

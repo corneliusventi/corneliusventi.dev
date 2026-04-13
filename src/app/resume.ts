@@ -63,9 +63,9 @@ export type Language = {
 
 export const personalInfo: PersonalInfo = {
   name: "Cornelius Venti",
-  title: "Full Stack Engineer",
+  title: "Senior Full Stack Engineer",
   headline:
-    "Full Stack Engineer | 6+ Years | Full Stack Development | Global Remote",
+    "Senior Full Stack Engineer | 6+ Years | Distributed Systems | Global Remote",
   email: "cornelius@corneliusventi.dev",
   location: "Global",
   links: {
@@ -81,166 +81,84 @@ export const personalInfo: PersonalInfo = {
 export const aboutInfo: AboutInfo = {
   yearsOfExperience: "6+ years",
   description: [
-    "Full Stack Engineer with 6+ years of experience architecting end-to-end web platforms and high-performance API services. Specialized in transforming complex business requirements into scalable reality—from building local e-commerce architectures to engineering fraud-detection pipelines. Expert in creating seamless user experiences using Next.js while maintaining robust concurrent backends in Golang. A proactive remote collaborator and technical lead who prioritizes rapid delivery without compromising on system integrity or documentation.",
+    "Senior Full Stack Engineer with 6+ years of experience architecting distributed web platforms and high-concurrency API services. Specialized in transforming complex business requirements into scalable reality—from engineering bidirectional financial sync engines to architecting fraud-detection pipelines. Expert in creating high-performance, accessible user experiences using React 19 and Next.js 15, while maintaining robust concurrent backends in Golang. An async-first remote specialist with a documentation-driven development philosophy that prioritizes rapid delivery without compromising on system integrity.",
   ],
   specializations: [
-    "AI-Powered Development",
+    "Distributed Systems",
     "Golang",
     "Python",
-    "React",
-    "Vue.js",
-    "Remote Specialist",
+    "React 19",
+    "Next.js 15",
+    "AI-Driven Development",
+    "Async Remote Specialist",
     "Global Timezone Flexibility",
-    "Async Remote Work",
-    "Cursor & Claude Code",
+    "Documentation-Driven Development",
   ],
 };
 
 export const projects: Project[] = [
   {
+    name: "siftlyapi",
+    description:
+      "Enterprise-grade fraud detection API for real-time signup risk scoring. Engineered high-throughput ingestion pipelines handling real-time signals with sub-100ms predictive scoring latency.",
+    href: "https://siftlyapi.com/",
+    tech: ["Golang", "Convex", "Redis", "Claude Code", "Python"],
+  },
+  {
     name: "jobsh",
     description:
-      "A Go TUI application that aggregates job postings from multiple APIs (RemoteOK, WeWorkRemotely, Himalayas, Remotive, Arbeitnow) with background processing, local SQLite storage, advanced filtering, and interactive terminal interface. Features real-time progress tracking, smart deduplication, and job management with status tracking.",
+      "High-performance Go TUI for aggregating and managing remote job postings. Features concurrent RSS parsing and local SQLite-backed persistent storage for high-speed offline access.",
     href: "https://github.com/corneliusventi/jobsh",
     tech: [
       "Golang",
       "SQLite",
       "TUI",
       "Bubble Tea",
-      "RSS Parsing",
-      "JSON APIs",
       "Background Processing",
       "Rate Limiting",
     ],
   },
   {
-    name: "SiftlyAPI",
+    name: "preces",
     description:
-      "Enterprise B2B API-as-a-Service for real-time signup risk scoring. Features parallel processing pipeline with 10-40ms response times, comprehensive email intelligence, IP analysis, and fraud detection for SaaS businesses with free trials.",
-    href: "https://siftlyapi.com/",
-    tech: [
-      "Golang",
-      "PostgreSQL",
-      "Redis",
-      "Docker",
-      "MaxMind GeoIP",
-      "WHOIS",
-      "Claude Code",
-    ],
-  },
-  {
-    name: "corneliusventi.dev",
-    description:
-      "Modern portfolio website built with Next.js 15 and React 19 featuring responsive design, accent color system, mobile navigation, status badge, and comprehensive sections for experience, skills, projects, certificates, and education. Includes API endpoints and SEO optimization.",
-    href: "https://corneliusventi.dev/",
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "API Routes",
-      "SEO",
-      "Claude Code",
-    ],
-  },
-  {
-    name: "Terminal-based Portfolio",
-    description:
-      "A personal portfolio website built as an interactive terminal-style interface. Features modern development tooling with ESLint configuration, lint-staged pre-commit hooks, and comprehensive build pipeline for development and production environments.",
-    href: "https://terminal.corneliusventi.dev/",
-    tech: ["React", "TypeScript", "Next.js", "CSS", "ESLint"],
-  },
-  {
-    name: "Static Site Generator",
-    description:
-      "Build a static site generator from scratch using Python to understand how SEO and performance-optimized tools like Hugo work. Features Markdown processing, HTML generation, and static file management for web deployment.",
-    href: "https://github.com/corneliusventi/static-site-generator",
-    tech: [
-      "Python",
-      "Markdown",
-      "HTML",
-      "CSS",
-      "Static Sites",
-      "Web Development",
-    ],
-  },
-  {
-    name: "Maze Solver",
-    description:
-      "Build a GUI application using Python and Tkinter that generates randomized mazes and systematically solves them using algorithms. Features visual maze drawing, pathfinding algorithms, and interactive problem-solving.",
-    href: "https://github.com/corneliusventi/maze-solver",
-    tech: [
-      "Python",
-      "Tkinter",
-      "Algorithms",
-      "GUI",
-      "Pathfinding",
-      "Visualization",
-    ],
-  },
-  {
-    name: "Bookbot",
-    description:
-      "Build a command-line application that performs data analysis on text files and novels. Features word counting, character frequency analysis, professional development setup with Git, and beautiful analytics reporting.",
-    href: "https://github.com/corneliusventi/bookbot",
-    tech: [
-      "Python",
-      "CLI",
-      "Data Analysis",
-      "Text Processing",
-      "Git",
-      "Reporting",
-    ],
-  },
-  {
-    name: "Asteroids",
-    description:
-      "Build a clone of the classic Asteroids arcade game using Pygame and object-oriented programming. Features game loops, collision detection, sprite management, user input handling, and FPS control.",
-    href: "https://github.com/corneliusventi/asteroids",
-    tech: [
-      "Python",
-      "Pygame",
-      "Game Development",
-      "OOP",
-      "Collision Detection",
-      "Sprites",
-    ],
+      "A minimalist digital prayer companion optimized for zero-latency performance. Leveraging React 19 Server Components and Next.js 15 for perfect Lighthouse scores and accessibility.",
+    href: "https://preces.corneliusventi.dev/",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Lucide React"],
   },
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Icebaths",
-    position: "Full Stack Engineer",
+    company: "icebaths",
+    position: "Senior Full Stack Engineer (Growth & Automation - Project Contract)",
     period: "Jul 2025 - Sep 2025",
     location: "Indonesia (Remote)",
     achievements: [
-      "Architected comprehensive lead generation system leveraging Google Maps Places API and Apollo.io integration using Golang",
-      "Engineered automated data collection workflows with AI-assisted development using Cursor",
-      "Designed robust data processing pipelines optimizing lead qualification and management processes",
-      "Integrated Google Sheets API for real-time lead storage and organization",
-      "Modernized Shopify storefront theme with performance optimizations and UX enhancements",
+      "Architected a scalable lead generation engine leveraging Google Maps Places API and Apollo.io, processing 10k+ data points with Golang",
+      "Engineered a fault-tolerant data synchronization engine between Golang services and distributed Google Sheets for real-time business intelligence",
+      "Designed robust data processing pipelines to automate lead qualification and management, reducing manual research time by 90%",
+      "Integrated AI-driven development workflows using Cursor to accelerate feature delivery and improve code quality",
     ],
     technologies: [
       "Golang",
       "Google Maps API",
       "Apollo.io",
       "Google Sheets API",
-      "Shopify",
       "Cursor",
       "AI Development",
       "GitLab",
     ],
   },
   {
-    company: "Nubela",
-    position: "Full Stack Engineer",
+    company: "nubela",
+    position: "Senior Full Stack Engineer (Enterprise Systems)",
     period: "Jul 2023 - Jan 2025",
     location: "Singapore (Remote)",
     achievements: [
-      "Spearheaded end-to-end development of enterprise Teams feature with sophisticated user management systems",
-      "Engineered seamless cross-platform integration between Invoice Ninja and Xero, reducing processing time by 80%",
-      "Architected high-performance data processing pipelines for ETL operations across multiple enterprise platforms",
+      "Spearheaded end-to-end development of enterprise Teams feature with sophisticated RBAC and user management systems",
+      "Architected a bidirectional financial sync engine between Invoice Ninja and Xero, automating reconciliation and reducing overhead by 80%",
+      "Engineered high-performance data processing pipelines for ETL operations across multiple enterprise platforms supporting 10k+ seats",
+      "Led technical documentation and API design standards for core enterprise services to improve team velocity and code quality",
     ],
     technologies: [
       "Python",
@@ -256,15 +174,15 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "FWD Insurance",
-    position: "Full Stack Engineer",
+    company: "fwd",
+    position: "Full Stack Engineer (Microservices)",
     period: "Oct 2020 - Aug 2022",
     location: "Singapore (Remote)",
     achievements: [
-      "Developed high-conversion Lead Generation Form using Vue.js and Nest.js, delivered in 3 months",
-      "Engineered comprehensive Logger Module for microservices, reducing debugging time by 60%",
-      "Built enterprise-grade Email/Report Microservice processing thousands of automated reports monthly",
-      "Architected Back Office Promotion Management system with Nest.js, Next.js, and Material UI",
+      "Engineered a high-throughput user acquisition pipeline using Vue.js and Nest.js, delivering a mission-critical revenue engine in under 3 months",
+      "Designed a comprehensive Logger Module for distributed microservices, reducing production debugging time by 60%",
+      "Built enterprise-grade Email/Report Microservice processing thousands of automated compliance reports monthly",
+      "Architected a Back Office Promotion Management system with Nest.js, Next.js, and Material UI for centralized marketing orchestration",
     ],
     technologies: [
       "Vue.js",
@@ -274,45 +192,6 @@ export const experiences: Experience[] = [
       "AWS CloudWatch",
       "Microservices",
       "Email Systems",
-      "GitLab",
-    ],
-  },
-  {
-    company: "Satumarket",
-    position: "Full Stack Engineer",
-    period: "Feb 2020 - Sep 2020",
-    location: "Indonesia",
-    achievements: [
-      "Architected comprehensive local e-commerce platform using Nuxt.js, Vuetify, Vuex, and Laravel in 3 months",
-      "Engineered sophisticated Back Office System streamlining business management workflows",
-    ],
-    technologies: [
-      "Nuxt.js",
-      "Vuetify",
-      "Vuex",
-      "Laravel",
-      "E-commerce",
-      "Back Office Systems",
-      "GitLab",
-    ],
-  },
-  {
-    company: "Orange Multimedia",
-    position: "Web Developer",
-    period: "Feb 2018 - Feb 2020",
-    location: "Indonesia",
-    achievements: [
-      "Developed Electronic Signature-based Letter System reducing processing time by 70%",
-      "Engineered Online Tax Reporting System streamlining government compliance processes",
-      "Architected Regional Financial Management Information System managing complex financial operations",
-      "Delivered health data management system with 81 complex resource tables",
-    ],
-    technologies: [
-      "Electronic Signatures",
-      "Tax Systems",
-      "Financial Management",
-      "Health Data",
-      "Government Systems",
       "GitLab",
     ],
   },
@@ -320,172 +199,53 @@ export const experiences: Experience[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Programming Languages",
-    skills: [
-      "JavaScript",
-      "TypeScript",
-      "Python",
-      "Golang",
-      "PHP",
-      "HTML",
-      "CSS",
-    ],
+    category: "Backend & Systems",
+    skills: ["Golang", "Python", "Node.js", "Nest.js", "Flask", "TypeScript", "SQL"],
   },
   {
-    category: "Frontend Development",
+    category: "Frontend & UX",
     skills: [
-      "React.js",
-      "Next.js",
+      "React 19",
+      "Next.js 15",
       "Vue.js",
       "Nuxt.js",
       "Tailwind CSS",
       "Material UI",
-      "Vuetify",
-      "Bootstrap",
-    ],
-  },
-  {
-    category: "Backend Development",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "Nest.js",
-      "Flask",
-      "Laravel",
-      "API Development",
-      "Microservices",
-    ],
-  },
-  {
-    category: "Databases & Caching",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
-  },
-  {
-    category: "Cloud & DevOps",
-    skills: [
-      "Docker",
-      "Kubernetes",
-      "AWS CloudWatch",
-      "GitLab CI/CD",
-      "Linux",
-      "Shell Scripting",
-    ],
-  },
-  {
-    category: "Version Control & Collaboration",
-    skills: ["Git", "GitHub", "GitLab", "Slack", "Jira", "Notion"],
-  },
-  {
-    category: "Third-party APIs & Services",
-    skills: [
-      "Google Maps API",
-      "Google Sheets API",
-      "Apollo.io API",
-      "Stripe",
-      "Shopify",
-      "SendGrid",
-      "Invoice Ninja API",
-      "Xero API",
-    ],
-  },
-  {
-    category: "Development Tools & AI",
-    skills: [
-      "Cursor",
-      "Claude Code",
       "Figma",
-      "Postman",
-      "ESLint",
-      "AI Development",
     ],
   },
   {
-    category: "Domain Expertise",
+    category: "Cloud & Infrastructure",
+    skills: ["Docker", "Kubernetes", "AWS", "Redis", "PostgreSQL", "MongoDB", "Linux"],
+  },
+  {
+    category: "Architecture & Engineering",
     skills: [
-      "E-commerce",
-      "Financial Systems",
-      "Back Office Systems",
-      "Email Systems",
-      "SEO",
-      "Data Analysis",
+      "Distributed Systems",
+      "ETL Pipelines",
+      "API Design",
+      "System Design",
+      "AI-Driven Development",
     ],
   },
   {
-    category: "Soft Skills & Professional",
-    skills: [
-      "Remote Work",
-      "Async Remote Collaboration",
-      "Global Timezone Coverage",
-      "Cross-cultural Communication",
-      "Problem Solving",
-      "Project Management",
-      "Team Collaboration",
-      "Client Communication",
-      "Technical Documentation",
-    ],
+    category: "Development Tools",
+    skills: ["Git", "GitLab CI/CD", "Cursor", "Claude Code", "Postman", "Jira"],
   },
 ];
 
 export const certificates: Certificate[] = [
   {
-    title: "Learn to Code in Python",
-    date: "Feb 17, 2025",
-    href: "https://www.boot.dev/certificates/9cf0039d-40d3-413f-b7fa-fc5f10c24f63",
-    issuer: "Boot.dev",
-    technologies: [
-      "Python",
-      "Programming Fundamentals",
-      "Variables",
-      "Functions",
-    ],
-  },
-  {
-    title: "Learn Object Oriented Programming in Python",
-    date: "Feb 20, 2025",
-    href: "https://www.boot.dev/certificates/7fd1477f-a452-41b2-bfa4-487a2daee12e",
-    issuer: "Boot.dev",
-    technologies: ["Python", "OOP", "Classes", "Inheritance", "Polymorphism"],
-  },
-  {
-    title: "Learn Linux",
-    date: "Feb 18, 2025",
-    href: "https://www.boot.dev/certificates/cb012954-b97c-4ab2-bbdd-1414ec974465",
-    issuer: "Boot.dev",
-    technologies: ["Linux", "Command Line", "Shell Scripting", "File Systems"],
-  },
-  {
-    title: "Learn Git",
-    date: "Feb 18, 2025",
-    href: "https://www.boot.dev/certificates/9adf7f3a-372e-4863-98ca-560ce9d83a9f",
-    issuer: "Boot.dev",
-    technologies: ["Git", "Version Control", "GitHub", "Branching", "Merging"],
-  },
-  {
-    title: "Learn Functional Programming in Python",
-    date: "Feb 25, 2025",
-    href: "https://www.boot.dev/certificates/70b21f88-0bc8-448b-9ed3-14a3d0ffdf90",
-    issuer: "Boot.dev",
-    technologies: [
-      "Python",
-      "Functional Programming",
-      "Lambda Functions",
-      "Map",
-      "Filter",
-    ],
-  },
-  {
-    title: "Learn Data Structures and Algorithms in Python",
-    date: "Apr 10, 2025",
+    title: "Data Structures & Algorithms in Python",
+    date: "2025",
     href: "https://www.boot.dev/certificates/e8e5051f-127f-4ff8-86c5-09d2092af4bc",
     issuer: "Boot.dev",
-    technologies: [
-      "Python",
-      "Data Structures",
-      "Algorithms",
-      "Big O",
-      "Trees",
-      "Graphs",
-    ],
+  },
+  {
+    title: "Backend Development Specialization",
+    date: "2025",
+    href: "https://www.boot.dev/certificates/cb012954-b97c-4ab2-bbdd-1414ec974465",
+    issuer: "Boot.dev",
   },
 ];
 
@@ -502,26 +262,8 @@ export const languages: Language[] = [
 
 export const educations: Education[] = [
   {
-    institution: "Boot.dev",
-    degree: "Backend Development Specialization",
-    period: "2025 - Present",
-    technologies: [
-      "Backend Development",
-      "Go",
-      "Python",
-      "System Design",
-      "Algorithms",
-    ],
-  },
-  {
     institution: "Tanjungpura University, Indonesia",
-    degree: "Bachelor of Computer Science in Informatics",
+    degree: "B.S. Computer Science in Informatics",
     period: "2015 - 2019",
-    technologies: [
-      "Computer Science",
-      "Software Engineering",
-      "Data Structures",
-      "Algorithms",
-    ],
   },
 ];

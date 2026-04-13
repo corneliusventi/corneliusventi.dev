@@ -1,532 +1,109 @@
-import Image from "next/image";
 import Link from "next/link";
-import profile from "./profile.png";
 import React from "react";
 import {
   personalInfo,
-  aboutInfo,
   projects,
   experiences,
   skillGroups,
-  educations,
-  certificates,
-  languages,
 } from "./resume";
+import { CopyEmail } from "./components/CopyEmail";
 
 export default function Home() {
+  // Explicitly curate and reorder the top 3 projects
+  const curatedProjects = [
+    projects.find((p) => p.name.toLowerCase() === "siftlyapi"),
+    projects.find((p) => p.name.toLowerCase() === "preces"),
+    projects.find((p) => p.name.toLowerCase() === "jobsh"),
+  ].filter((p): p is typeof projects[0] => p !== undefined);
+
+  // Curate to last 3 experiences
+  const curatedExperiences = experiences.slice(0, 3);
+
   return (
-    <>
-      {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          {/* Subtle gradient overlay */}
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          {/* Geometric pattern */}
-          <div className="absolute top-0 left-0 h-full w-full opacity-10">
-            <div className="border-brand-light absolute top-10 left-10 h-32 w-32 rotate-12 transform border-2 opacity-30"></div>
-            <div className="border-brand-light absolute top-32 right-20 h-24 w-24 -rotate-12 transform border-2 opacity-20"></div>
-            <div className="border-brand-accent absolute bottom-20 left-20 h-20 w-20 rotate-45 transform border-2 opacity-40"></div>
-            <div className="border-brand-light absolute right-40 bottom-40 h-16 w-16 -rotate-45 transform border-2 opacity-15"></div>
-          </div>
-        </div>
+    <div className="flex flex-col gap-24">
+      {/* Intro - High Impact Tagline */}
+      <section className="animate-reveal reveal-0">
+        <p className="text-2xl leading-relaxed text-zinc-900 dark:text-zinc-100 font-medium">
+          Senior Full Stack Engineer with 6+ years of experience architecting distributed Go services, 
+          high-concurrency Python backends, and performant React 19 interfaces. Specialist in asynchronous ETL pipelines and AI-driven development.
+        </p>
+      </section>
 
-        <div className="container mx-auto flex min-h-screen flex-col items-start justify-center px-6 py-20 md:px-8 md:py-24 xl:flex-row-reverse xl:items-center xl:gap-20 xl:py-32">
-          {/* Profile Image with Enhanced Styling */}
-          <div className="flex w-full flex-col items-center gap-4 xl:w-auto">
-            <Image
-              className="border-brand-accent border-opacity-50 h-auto w-2/3 rounded-full border-4 xl:w-auto"
-              src={profile}
-              width={512}
-              height={512}
-              alt="Cornelius Venti Icon"
-              priority
-            />
-            {/* Status Badge */}
-            <span className="bg-brand-light bg-opacity-20 text-brand-dark border-brand-light border-opacity-50 hover:bg-opacity-30 hover:border-opacity-70 mb-10 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:mb-12 xl:mb-0">
-              <div className="bg-brand-dark h-2 w-2 animate-pulse rounded-full"></div>
-              Open to Global Opportunities
-            </span>
-          </div>
-
-          {/* Content with Enhanced Typography */}
-          <div className="flex flex-col items-start gap-8 text-left xl:gap-12">
-            <div className="relative">
-              {/* Background accent for title */}
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h1 className="from-brand-light to-brand-accent relative bg-gradient-to-r bg-clip-text text-4xl leading-tight font-black uppercase md:text-5xl lg:text-6xl xl:text-8xl xl:leading-none">
-                I&apos;m a{" "}
-                <span className="text-brand-accent">{personalInfo.title}</span>
-              </h1>
-            </div>
-
-            <div className="w-full max-w-4xl space-y-6">
-              <p className="text-xl leading-relaxed opacity-90 xl:text-2xl xl:leading-relaxed">
-                6+ Years | Full Stack Development | Global Remote
+      {/* Projects - Curated & Concise */}
+      <section className="flex flex-col gap-8 animate-reveal reveal-1">
+        <h2 className="text-xs font-medium text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] font-mono">
+          Selected Engineering Projects
+        </h2>
+        <div className="flex flex-col gap-12">
+          {curatedProjects.map((project, index) => (
+            <div key={index} className="group flex flex-col gap-2">
+              <Link
+                href={project.href}
+                target="_blank"
+                className="text-lg font-bold text-zinc-950 dark:text-zinc-50 link-underline inline-flex items-center gap-2 font-mono uppercase tracking-tight"
+              >
+                <span className="transition-transform group-hover:translate-x-1">{project.name}</span>
+              </Link>
+              <p className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xl">
+                {project.description}
               </p>
-
-              {/* Enhanced badge groups with better organization */}
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-3">
-                  {aboutInfo.specializations.map(
-                    (specialization, specIndex) => (
-                      <span
-                        key={specIndex}
-                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-sm"
-                      >
-                        {specialization}
-                      </span>
-                    ),
-                  )}
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-6">
-                <Link
-                  href={`mailto:${personalInfo.email}`}
-                  className="group bg-brand-accent text-brand-dark hover:bg-opacity-90 hover:shadow-brand-accent/30 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold tracking-wide uppercase shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
-                >
-                  Get in Touch
-                  <svg
-                    className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </Link>
-
-                <Link
-                  href="#about"
-                  className="group border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-dark inline-flex items-center justify-center rounded-full border-2 px-8 py-4 text-base font-bold tracking-wide uppercase transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                >
-                  Learn More
-                  <svg
-                    className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-y-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    />
-                  </svg>
-                </Link>
+              <div className="flex flex-wrap gap-x-6 gap-y-1 mt-1 font-mono">
+                {project.tech.map((t, i) => (
+                  <span key={i} className="text-[10px] text-zinc-400 dark:text-zinc-600 uppercase tracking-widest">
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* About Section */}
-      <section id="about" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 right-0 h-full w-full opacity-5">
-            <div className="border-brand-accent absolute top-20 right-10 h-28 w-28 -rotate-12 transform border-2 opacity-60"></div>
-            <div className="border-brand-light absolute bottom-32 left-10 h-20 w-20 rotate-45 transform border-2"></div>
-            <div className="border-brand-accent absolute top-40 left-32 h-12 w-12 rotate-30 transform border-2 opacity-40"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                About
-              </h2>
+      {/* Skills - Technical Expertise Grid */}
+      <section className="flex flex-col gap-8 animate-reveal reveal-2">
+        <h2 className="text-xs font-medium text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] font-mono">
+          Technical Expertise
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+          {skillGroups.map((group, index) => (
+            <div key={index} className="flex flex-col gap-2">
+              <h3 className="text-sm font-bold text-zinc-950 dark:text-zinc-50 uppercase tracking-tight font-mono">
+                {group.category}
+              </h3>
+              <p className="text-[13px] text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                {group.skills.join(", ")}
+              </p>
             </div>
-            <div className="space-y-8 text-base xl:text-lg">
-              {aboutInfo.description.map((paragraph, index) => (
-                <p key={index} className="leading-relaxed xl:leading-relaxed">
-                  {index === 0 ? (
-                    <>
-                      Full Stack Engineer with{" "}
-                      <span className="text-brand-accent font-semibold">
-                        {aboutInfo.yearsOfExperience}
-                      </span>{" "}
-                      {paragraph.replace("Full Stack Engineer with 6+ years", "")}
-                    </>
-                  ) : (
-                    paragraph
-                  )}
-                </p>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Experiences Section */}
-      <section id="experiences" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 left-0 h-full w-full opacity-8">
-            <div className="border-brand-light absolute top-16 left-16 h-24 w-24 rotate-12 transform border-2"></div>
-            <div className="border-brand-accent absolute top-40 right-12 h-32 w-32 -rotate-12 transform border-2 opacity-50"></div>
-            <div className="border-brand-light absolute right-24 bottom-24 h-16 w-16 rotate-45 transform border-2"></div>
-            <div className="border-brand-accent absolute bottom-40 left-20 h-20 w-20 -rotate-30 transform border-2 opacity-40"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Experiences
-              </h2>
+      {/* Experience - Seniority Focus */}
+      <section className="flex flex-col gap-8 animate-reveal reveal-3">
+        <h2 className="text-xs font-medium text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.2em] font-mono">
+          Recent Experience
+        </h2>
+        <div className="flex flex-col gap-10">
+          {curatedExperiences.map((exp, index) => (
+            <div key={index} className="flex flex-col gap-2">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4 group">
+                <span className="text-lg font-bold text-zinc-950 dark:text-zinc-50 transition-transform group-hover:translate-x-1 font-mono uppercase tracking-tight">
+                  {exp.company}
+                </span>
+                <span className="text-xs text-zinc-400 dark:text-zinc-600 tabular-nums font-mono">
+                  {exp.period}
+                </span>
+              </div>
+              <span className="text-base text-zinc-500 dark:text-zinc-400">{exp.position}</span>
             </div>
-            <div className="space-y-8 text-base md:space-y-10 xl:text-lg">
-              {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <div className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
-                    {exp.company}
-                  </div>
-                  <div className="mb-1 text-base opacity-90 md:text-lg xl:text-xl">
-                    {exp.position} • {exp.location}
-                  </div>
-                  <div className="mb-4 text-sm opacity-80 md:text-base xl:text-lg">
-                    <span className="text-brand-accent font-semibold">
-                      {exp.period}
-                    </span>
-                  </div>
-                  {exp.technologies && (
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Skills Section */}
-      <section id="skills" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 right-0 h-full w-full opacity-6">
-            <div className="border-brand-accent absolute top-12 right-20 h-36 w-36 rotate-45 transform border-2 opacity-50"></div>
-            <div className="border-brand-light absolute bottom-16 left-12 h-20 w-20 -rotate-12 transform border-2"></div>
-            <div className="border-brand-accent absolute top-32 left-16 h-16 w-16 -rotate-45 transform border-2 opacity-35"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Skills
-              </h2>
-            </div>
-            <div className="space-y-8 text-base md:space-y-10 xl:text-lg">
-              {skillGroups.map((skillGroup, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <div className="mb-4 text-2xl font-semibold xl:text-3xl">
-                    {skillGroup.category}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {skillGroup.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      {/* Contact Section */}
+      <section className="pt-4 animate-reveal reveal-4">
+        <CopyEmail email={personalInfo.email} />
       </section>
-
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Languages Section */}
-      <section id="languages" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 left-0 h-full w-full opacity-7">
-            <div className="border-brand-accent absolute top-20 left-20 h-24 w-24 rotate-30 transform border-2 opacity-60"></div>
-            <div className="border-brand-light absolute right-16 bottom-16 h-20 w-20 -rotate-45 transform border-2"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Languages
-              </h2>
-            </div>
-            <div className="space-y-6 text-base md:space-y-8 xl:text-lg">
-              {languages.map((language, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <div className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
-                    {language.name}
-                  </div>
-                  <div className="text-base opacity-90 md:text-lg xl:text-xl">
-                    <span className="text-brand-accent font-semibold">
-                      {language.level}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Projects Section */}
-      <section id="projects" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 left-0 h-full w-full opacity-7">
-            <div className="border-brand-light absolute top-24 left-24 h-28 w-28 -rotate-45 transform border-2"></div>
-            <div className="border-brand-light absolute right-16 bottom-20 h-24 w-24 rotate-12 transform border-2"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Projects
-              </h2>
-            </div>
-            <div className="space-y-8 text-base md:space-y-10 xl:text-lg">
-              {projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <Link
-                    href={project.href}
-                    target="_blank"
-                    className="hover:text-brand-accent mb-2 text-xl font-semibold transition-colors hover:underline hover:underline-offset-4 md:text-2xl xl:text-3xl"
-                  >
-                    {project.name}
-                  </Link>
-                  <div className="mb-4 text-base leading-relaxed opacity-90 xl:text-lg">
-                    {project.description}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="bg-brand-accent bg-opacity-20 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-40 hover:border-opacity-70 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg xl:text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Certificates Section */}
-      <section id="certificates" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 right-0 h-full w-full opacity-6">
-            <div className="border-brand-accent absolute top-16 right-12 h-32 w-32 rotate-12 transform border-2 opacity-40"></div>
-            <div className="border-brand-light absolute bottom-24 left-16 h-20 w-20 -rotate-45 transform border-2"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Certificates
-              </h2>
-            </div>
-            <div className="space-y-6 text-base md:space-y-8 xl:text-lg">
-              {certificates.map((certificate, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <Link
-                    href={certificate.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-brand-accent transition-all duration-300 hover:underline hover:underline-offset-4"
-                  >
-                    <h3 className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
-                      {certificate.title}
-                    </h3>
-                  </Link>
-                  <p className="mb-1 text-base opacity-90 md:text-lg xl:text-xl">
-                    {certificate.issuer}
-                  </p>
-                  <p className="text-brand-accent mb-4 text-sm font-semibold opacity-80 md:text-base xl:text-lg">
-                    {certificate.date}
-                  </p>
-                  {certificate.technologies && (
-                    <div className="flex flex-wrap gap-2">
-                      {certificate.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Divider */}
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative flex items-center justify-center py-8">
-          <div className="bg-brand-accent absolute h-px w-full opacity-20"></div>
-          <div className="bg-brand-accent mx-4 h-2 w-2 rotate-45 transform opacity-40"></div>
-        </div>
-      </div>
-
-      {/* Educations Section */}
-      <section id="educations" className="relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="from-brand-dark via-brand-dark to-brand-dark absolute inset-0 bg-gradient-to-br opacity-50"></div>
-          <div className="absolute top-0 right-0 h-full w-full opacity-6">
-            <div className="border-brand-light absolute top-20 right-32 h-32 w-32 rotate-30 transform border-2"></div>
-            <div className="border-brand-light absolute bottom-32 left-20 h-18 w-18 -rotate-30 transform border-2"></div>
-          </div>
-        </div>
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 py-16 md:px-8 md:py-24 xl:flex-row xl:justify-start xl:py-32">
-          <div className="flex w-full max-w-6xl flex-col items-start gap-10 text-left md:gap-12 xl:gap-16">
-            <div className="relative">
-              <div className="from-brand-accent absolute -inset-2 bg-gradient-to-r to-transparent opacity-5 blur-sm"></div>
-              <h2 className="text-brand-accent relative text-2xl font-black uppercase md:text-3xl lg:text-4xl xl:text-5xl">
-                Educations
-              </h2>
-            </div>
-            <div className="space-y-8 text-base md:space-y-10 xl:text-lg">
-              {educations.map((edu, index) => (
-                <div
-                  key={index}
-                  className="border-brand-accent border-l-4 pl-6 md:pl-8"
-                >
-                  <div className="mb-2 text-xl font-semibold md:text-2xl xl:text-3xl">
-                    {edu.institution}
-                  </div>
-                  <div className="mb-1 text-base opacity-90 md:text-lg xl:text-xl">
-                    {edu.degree}
-                  </div>
-                  <div className="mb-4 text-sm opacity-80 md:text-base xl:text-lg">
-                    <span className="text-brand-accent font-semibold">
-                      {edu.period}
-                    </span>
-                  </div>
-                  {edu.technologies && (
-                    <div className="flex flex-wrap gap-2">
-                      {edu.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="bg-brand-accent bg-opacity-15 text-brand-dark border-brand-accent border-opacity-30 hover:bg-opacity-35 hover:border-opacity-60 cursor-pointer rounded-lg border px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md xl:text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
