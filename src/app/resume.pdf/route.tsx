@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 1.3,
     marginBottom: 2,
+    textTransform: "uppercase",
   },
   itemMeta: {
     fontSize: 8,
